@@ -1,0 +1,23 @@
+{
+  "name": "Remindly_Front_End",
+  "version": "0.0.1",
+  "author": "remindly",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonyan/remindly_front_end"
+  },
+  "license": "remindly",
+
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "express3-handlebars": "*"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }  
+}
