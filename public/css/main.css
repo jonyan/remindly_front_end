@@ -16,6 +16,7 @@ html, body {
 	color: white;
 	font-family: "helvetica neue";
 	font-weight: lighter;
+	background-image: url('background_image.png');
 
 }
 
