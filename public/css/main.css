@@ -7,11 +7,12 @@ html, body {
 	padding: 0;
 }
 
+
+
 #body {
 	width: 450px;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: black;
 	color: white;
 	font-family: "helvetica neue";
 	font-weight: lighter;
