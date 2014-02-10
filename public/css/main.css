@@ -44,6 +44,7 @@ html, body {
 
 }
 
+
 .nav_footer_button {
 	/*background-color: rgba(254, 254, 254, .5);*/
 	border:1px solid white;
@@ -98,6 +99,7 @@ html, body {
 
 }
 
+
 .dial_button {
 	width: 90px;
 }
@@ -106,9 +108,9 @@ html, body {
 	height: 80px;
 }
 
+
+
 td {
-	/*background-color: green;*/
-	/*width: 80px;*/
 	text-align: center;
 }
 

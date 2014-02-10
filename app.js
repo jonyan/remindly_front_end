@@ -42,12 +42,13 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.login);
-app.get('/verification', verification.verify);
-app.get('/user_home', user_home.view);
-app.get('/who', who.addRecipients);
-app.get('/when', when.setTime);
-app.get('/message', message.sendMessage);
+app.get('/', index.view);
+app.get('/verification', verification.login);
+// app.get('/verification', verification.getMessage);
+app.get('/user_home', user_home.verify);
+app.get('/who', who.view);
+app.get('/when', when.addRecipients);
+app.get('/message', message.setWhen);
 
 
 http.createServer(app).listen(app.get('port'), function(){

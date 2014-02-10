@@ -1,6 +1,7 @@
 
-// GET the date/time to send message and then go to the message page 
+// get all of the recipients of the message and sed these numbers to backend then 
+// render when page
 
-exports.setTime = function(req, res) {    
+exports.addRecipients = function(req, res) {    
 	res.render('when');
  };

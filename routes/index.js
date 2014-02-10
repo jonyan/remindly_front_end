@@ -4,6 +4,6 @@
 // get JSON of user's contact
 
 
-exports.login = function(req, res){
+exports.view = function(req, res){
 	res.render('index');
 };

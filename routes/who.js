@@ -1,6 +1,5 @@
 
-// GET the recipients and then go to when page
 
-exports.addRecipients = function(req, res) {    
+exports.view = function(req, res) {    
 	res.render('who');
  };

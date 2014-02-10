@@ -25,8 +25,9 @@
 		<center><h4 class="page_header">Login with cell number to send a delayed text reminder!</h4></center>
 
 		<div id="login_text_field_container">
+			<!-- TODO: Make this a form with method="get" action="/verification" -->
 			<div id="login_text_field">
-				<span>( _ _ _ ) _ _ _ - _ _ _ _</span> &nbsp;<a href="/verification"><img src="images/next.png" width="30" height"30"></a>
+				<span id="user_phone_number">( _ _ _ ) _ _ _ - _ _ _ _</span> &nbsp;<a href="/verification"><img src="images/next.png" width="30" height"30"></a>
 			</div>
 		</div>
 
@@ -34,27 +35,27 @@
 		<div id="dialpad_container">
 			<table id="dialpad_table">
 				<tr>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_1.png" ></a></td>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_2.png"></a></td>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_3.png"></a></td>
+					<td class="dial_button"><a id="digit1" href="#"><img class="dialpad_button_image" src="images/dialpad_1.png" ></a></td>
+					<td class="dial_button"><a id="digit2" href="#"><img class="dialpad_button_image" src="images/dialpad_2.png"></a></td>
+					<td class="dial_button"><a id="digit3" href="#"><img class="dialpad_button_image" src="images/dialpad_3.png"></a></td>
 				</tr>
 
 				<tr>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_4.png"></a></td>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_5.png"></a></td>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_6.png"></a></td>
+					<td class="dial_button"><a id="digit4" href="#"><img class="dialpad_button_image" src="images/dialpad_4.png"></a></td>
+					<td class="dial_button"><a id="digit5" href="#"><img class="dialpad_button_image" src="images/dialpad_5.png"></a></td>
+					<td class="dial_button"><a id="digit6" href="#"><img class="dialpad_button_image" src="images/dialpad_6.png"></a></td>
 				</tr>
 
 				<tr>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_7.png"></td>
-					<td class="dial_button"></a><img class="dialpad_button_image" src="images/dialpad_8.png"></td>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_9.png"></a></td>
+					<td class="dial_button"><a id="digit7" href="#"><img class="dialpad_button_image" src="images/dialpad_7.png"></a></td>
+					<td class="dial_button"><a id="digit8" href="#"><img class="dialpad_button_image" src="images/dialpad_8.png"></a></td>
+					<td class="dial_button"><a id="digit9" href="#"><img class="dialpad_button_image" src="images/dialpad_9.png"></a></td>
 				</tr>
 
 					<tr>
 					<td class="dial_button"></td>
-					<td class="dial_button"><a href="#"><img class="dialpad_button_image" src="images/dialpad_0.png"></a></td>
-					<td class="dial_button"><a href="#"><img style="width:65px; height:auto;" class="dialpad_button_image" src="images/back_button.png"></a></td>
+					<td class="dial_button"><a id="digit0" href="#"><img class="dialpad_button_image" src="images/dialpad_0.png"></a></td>
+					<td class="dial_button"><a id="delete_btn" href="#"><img style="width:65px; height:auto;" class="dialpad_button_image" src="images/back_button.png"></a></td>
 				</tr>
 
 			</table>
@@ -67,7 +68,7 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/jquery-1.11.0.js"></script>
 		<script src="js/bootstrap.js"></script>
-		<script src="js/hci-friends.js"></script>
+		<script src="js/main.js"></script>
 
 </body>
 </html>
