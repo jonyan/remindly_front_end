@@ -15,7 +15,34 @@
 		<h2 class="page_header">Select When to Send Remindly</h2>
 
 		<center>
-		<h2 class="page_header">When: </h2><input class="textbox"type="text" placeholder="mm/dd/yyyy HH:MM pm/am">
+						<h2 class="page_header">When: </h2>
+
+
+			<form id="add_when_form" role="form" method="get" action="/message">
+				<table id ="hidden_form_data">
+						<tr>
+							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.0.recipient}} name="recipient1"></td>
+						</tr>
+						<tr>
+							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.1.recipient}} name="recipient2"></td>
+						</tr>
+						<tr>
+							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.2.recipient}} name="recipient3"></td>
+						</tr>
+						<tr>
+							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.3.recipient}} name="recipient4"></td>
+						</tr>
+					</table>
+					<input class="textbox"type="text" placeholder="mm/dd/yyyy HH:MM pm/am">
+					<input type="submit" id="submitBtn" value="Set Time">
+			</form>
+
+
+<!-- 			<h3>{{recipientsArr.0.recipient}}</h3>
+			<h3>{{recipientsArr.1.recipient}}</h3>
+			<h3>{{recipientsArr.2.recipient}}</h3>
+			<h3>{{recipientsArr.3.recipient}}</h3>
+ -->		
 		</center>
 
 		<div class="clear_footer"></div>

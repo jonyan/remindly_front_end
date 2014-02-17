@@ -4,80 +4,61 @@
 
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	
 </head>
 
 <body>
-	<div id="body">
-		<br><br><br>
-		<center><a href="/"><img id="home_page_logo" src="images/Logo.png"></a></center>
-		<h2 class="page_header">Send a remindly to</h2>
-
-		<div id="contacts_container">
-			<!-- <center>
-			<table>
-				<tr>
-					<td class="contact_row"><div class="selected_contact"><span class="contact_text">Me</span></div></td>
-				</tr>
-				<tr>
-					<td class="contact_row"><div class="contact_to_add"><span class="contact_text"><i>Add phone or name...</i></span></div></td>
-				</tr>
-				<tr>
-					<td class="contact_row"><div class="contact_to_add"><span class="contact_text"><i>Add phone or name...</i></span></div></td>
-				</tr>
-				<tr>
-					<td class="contact_row"><div class="contact_to_add"><span class="contact_text"><i>Add phone or name...</i></span></div></td>
-				</tr>
-				<tr>
-					<td class="contact_row"><div class="contact_to_add"><span class="contact_text"><i>Add phone or name...</i></span></div></td>
-				</tr>
-			</table>
-			</center>
-			<center>
-			<br><br> 
-			<input class="textbox"type="text"> 
-			<br><br> 
-			<input class="textbox"type="text"> 
-		</center> -->
-			<center>
-
-				<table>
-					<tr>
-						<td class="contact_row"><a href="#" class="contact_link"><div class="selected_contact"><span class="contact_text">Me</span></div></a></td>
-					</tr>
-					<tr>
-						<td class="contact_row"><input class="textbox"type="text" placeholder="Add phone or name..."></td>
-					</tr>
-					<tr>
-						<td class="contact_row"><input class="textbox"type="text" placeholder="Add phone or name..."></td>
-					</tr>
-					<tr>
-						<td class="contact_row"><input class="textbox"type="text" placeholder="Add phone or name..."></td>
-					</tr>
-					<tr>
-						<td class="contact_row"><input class="textbox"type="text" placeholder="Add phone or name..."></td>
-					</tr>
-				</table>
-			</center>
+	<div class="body_container">
+		<div class="header_bar">
+			<div><a class="header_back_btn" href="/user_home">Cancel</div></a>
+			<center><a href="/"><img class="header_logo" src="images/Logo.png"></a></center>
 		</div>
-
-		<div class="clear_footer"></div>
-
-		<div class="nav_footer">
-			<a class="nav_footer_link" href="/when"><div class="nav_footer_button next">When&nbsp;&gt;</div></a>
-			<!-- <div class="nav_footer_button next">When&nbsp;&gt;</div> -->
-
-			<a class="nav_footer_link" href="/user_home"><div class="nav_footer_button">&lt;&nbsp;Back</div></a>
-		</div>
-			
-
 		
+		<div id="body">
+			<h2 class="body_header_text">Send a Remindly to...</h2>
+
+
+			<div id="contacts_container">
+				<center>
+					<form id="add_contacts_form" role="form" method="get" action="/when">
+						<table>
+							<tr>
+								<td class="contact_row"><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Me</label></div></td>
+							</tr>
+							<tr id="recipient1">
+								<td class="contact_row"><input class="textbox" id="recipient1" type="tel" onclick="addTextField()"placeholder="Add more phone #s or names..." name="recipient1"></td>
+							</tr>
+
+							<tr>
+								<td><input type="submit" id="submitBtn" value="Submit"></td>
+							</tr>
+						</table>
+					</form>
+				</center>
+			</div>
+
+			<div class="clear_footer"></div>
+
+			<div class="nav_footer">
+				<div class="nav_footer_btn_container">
+					<a class="nav_footer_link" href="/when"><div class="nav_footer_button next">When&nbsp;&gt;</div></a>
+					<!-- <a class="nav_footer_link" href="/who"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a> -->
+				</div>
+				<div class="nav_footer_btn_buffer"></div>
+
+			</div>
+				
+
+			
+		</div>
 	</div>
-		<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
 
-		<script src="js/main.js"></script>
-
+	<script src="js/main.js"></script>
 </body>
 </html>
 

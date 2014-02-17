@@ -8,30 +8,27 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
+	      
 </head>
 
 <body>
+	<div class="body_container">
 	<div id="body">
 		<br><br>
-		<center><a href="/"><img id="home_page_logo" src="images/Logo.png"></a></center>
-		<center><h4 class="page_header">Login with cell number to send a delayed text reminder!</h4></center>
+		<center><a href="/"><img id="home_page_logo" src="images/logo_color.png"></a></center>
+		<center><h4 class="body_header_text">Login with cell number to send a delayed text reminder!</h4></center>
+
 
 		<div id="login_text_field_container">
-			<!-- TODO: Make this a form with method="get" action="/verification" -->
-			<div id="login_text_field">
-				<span id="user_phone_number">( _ _ _ ) _ _ _ - _ _ _ _</span> &nbsp;<a href="/verification"><img src="images/next.png" width="30" height"30"></a>
-			</div>
+			<input type="tel" id="login_field" placeholder="( _ _ _ ) _ _ _ - _ _ _ _"/>
+			<div id="next_button_container"><a href="/user_home"><img id="next_button" src="images/next.png"></a></div>
 		</div>
 
-		<br>
+		<div id="delayed_sms_reminder_img_container">
+			<center><img id="delayed_sms_reminder_img" src="images/delayed_sms_reminder_logo_large.png"></center>
+		</div>
+
+		<!-- <br>
 		<div id="dialpad_container">
 			<table id="dialpad_table">
 				<tr>
@@ -59,11 +56,11 @@
 				</tr>
 
 			</table>
-		</div>
+		</div> -->
 		
 	</div>
 
-	
+	</div>
 
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/jquery-1.11.0.js"></script>
