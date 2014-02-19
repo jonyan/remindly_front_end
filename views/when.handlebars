@@ -4,6 +4,9 @@
 
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/default.date.css">
@@ -13,11 +16,7 @@
 </head>
 
 <body>
-<!-- 	### Extend [pickadate v3](http://http://amsul.github.io/pickadate.js) with [date.js](http://www.datejs.com/) to enable keyboard typing and the parsing of any date format.
-
-	Type or pick a date: -->
 	<div class="body_container">
-
 		<div class="header_bar">
 			<div><a class="header_back_btn" href="/user_home">Cancel</div></a>
 			<center><a href="/"><img class="header_logo" src="images/Logo.png"></a></center>
@@ -26,31 +25,42 @@
 		<div id="body">
 			<h2 class="body_header_text">Select When to Send Remindly</h2>
 			
-				<center><label for="datetime">Choose a date and time:</label></center>
-				<br>
-					<div id="wrap">
-						
-						<center><input type="text" id="datetime"/> </center>
-						<div id="hidden">
-							<center>
-								<input type="text" id="date"/>
-								<input type="text" id="time"/>
+				<!-- 	### Extend [pickadate v3](http://http://amsul.github.io/pickadate.js) with [date.js](http://www.datejs.com/) to enable keyboard typing and the parsing of any date format.
 
-							</center>
-						</div>
-						<div id="outlet"></div>
-					</div>
+				Type or pick a date: -->
+			<center><label for="datetime">Choose a date and time:</label></center>
+			<br>
+			<div id="wrap">
+				
+				<center><input type="text" id="datetime"/></center>
 
-					<div class="clear_footer"></div>
+				<div id="hidden">
+					<center>
+						<input type="text" id="date"/>
+						<input type="text" id="time"/>
+					</center>
+				</div>
+
+				<!-- outlet div brings up actual calendar -->
+				<div id="outlet"></div> 
+
+			</div>
+
+			<div class="clear_footer"></div>
 
 			<div class="nav_footer">
+
 				<div class="nav_footer_btn_container">
-					<a class="nav_footer_link" href="/message"><div class="nav_footer_button_option next">Send Message&nbsp;&gt;</div></a>
+
+					<a class="nav_footer_link" href="/message"><div class="nav_footer_button_option next">Send&nbsp;&gt;</div></a>
 					<a class="nav_footer_link" href="/who"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a>
+
 				</div>
+
 				<div class="nav_footer_btn_buffer"></div>
 
 			</div>
+
 		</div>	
 	</div>		
 		
