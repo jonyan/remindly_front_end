@@ -5,17 +5,59 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/default.date.css">
+	<link rel="stylesheet" type="text/css" href="css/default.time.css">
+	<link rel="stylesheet" type="text/css" href="css/date.css">
+
 </head>
 
 <body>
+<!-- 	### Extend [pickadate v3](http://http://amsul.github.io/pickadate.js) with [date.js](http://www.datejs.com/) to enable keyboard typing and the parsing of any date format.
+
+	Type or pick a date: -->
 	<div id="body">
+	<br><br><br>
+	<center><a href="/"><img id="home_page_logo" src="images/Logo.png"></a></center>
+	<h2 class="page_header">Select When to Send Remindly</h2>
+	
+		<label for="datetime">Choose a date and time:</label>
+		<br><br>
+			<div id="wrap">
+				
+				<center><input type="text" id="datetime"/> </center>
+				<div id="hidden">
+				<center>
+					<input type="text" id="date"/>
+					<input type="text" id="time"/>
+
+				</center>
+				</div>
+				<div id="outlet"></div>
+			</div>
+			<div class="clear_footer"></div>
+			<div class="nav_footer">
+			<a class="nav_footer_link" href="/message"><div class="nav_footer_button next" style="width: 90px;height: 40px">Write Message &gt;</div></a>
+
+			<a class="nav_footer_link" href="/who"><div class="nav_footer_button">&lt;&nbsp;Back</div></a>
+			</div>
+	</div>
+	<!-- <div id="body">
 		<br><br><br>
 		<center><a href="/"><img id="home_page_logo" src="images/Logo.png"></a></center>
 		<h2 class="page_header">Select When to Send Remindly</h2>
 
+	
+		
 		<center>
-		<h2 class="page_header">When: </h2><input class="textbox"type="text" placeholder="mm/dd/yyyy HH:MM pm/am">
+			<fieldset>
+	  		<input type="text" id="input_text">
+	  		<input type="text" id="input_date">
+			</fieldset>
+			<label for="date">Choose a date:</label>
+			<input type="date" name="date" id="date" value=""  />
+			<label for="time">Choose a time:</label>
+			<input type="time" name="time" id="time" value=""  />
 		</center>
 
 		<div class="clear_footer"></div>
@@ -25,14 +67,16 @@
 
 			<a class="nav_footer_link" href="/who"><div class="nav_footer_button">&lt;&nbsp;Back</div></a>
 		</div>
-
+ -->
 			
 
 		
-	</div>
 		<script src="https://code.jquery.com/jquery.js"></script>
 
-		<script src="js/main.js"></script>
+		<script src="js/picker.js"></script>
+		<script src="js/picker.date.js"></script>
+		<script src="js/picker.time.js"></script>
+		<script src="js/datetime.js"></script>
 
 </body>
 </html>
