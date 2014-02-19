@@ -5,61 +5,61 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/default.date.css">
+	<link rel="stylesheet" type="text/css" href="css/default.time.css">
+	<link rel="stylesheet" type="text/css" href="css/date.css">
+
 </head>
 
 <body>
-	<div id="body">
-		<br><br><br>
-		<center><a href="/"><img id="home_page_logo" src="images/Logo.png"></a></center>
-		<h2 class="page_header">Select When to Send Remindly</h2>
+<!-- 	### Extend [pickadate v3](http://http://amsul.github.io/pickadate.js) with [date.js](http://www.datejs.com/) to enable keyboard typing and the parsing of any date format.
 
-		<center>
-						<h2 class="page_header">When: </h2>
+	Type or pick a date: -->
+	<div class="body_container">
 
-
-			<form id="add_when_form" role="form" method="get" action="/message">
-				<table id ="hidden_form_data">
-						<tr>
-							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.0.recipient}} name="recipient1"></td>
-						</tr>
-						<tr>
-							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.1.recipient}} name="recipient2"></td>
-						</tr>
-						<tr>
-							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.2.recipient}} name="recipient3"></td>
-						</tr>
-						<tr>
-							<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.3.recipient}} name="recipient4"></td>
-						</tr>
-					</table>
-					<input class="textbox"type="text" placeholder="mm/dd/yyyy HH:MM pm/am">
-					<input type="submit" id="submitBtn" value="Set Time">
-			</form>
-
-
-<!-- 			<h3>{{recipientsArr.0.recipient}}</h3>
-			<h3>{{recipientsArr.1.recipient}}</h3>
-			<h3>{{recipientsArr.2.recipient}}</h3>
-			<h3>{{recipientsArr.3.recipient}}</h3>
- -->		
-		</center>
-
-		<div class="clear_footer"></div>
-
-		<div class="nav_footer">
-			<a class="nav_footer_link" href="/message"><div class="nav_footer_button next" style="width: 90px;height: 40px">Write Message &gt;</div></a>
-
-			<a class="nav_footer_link" href="/who"><div class="nav_footer_button">&lt;&nbsp;Back</div></a>
+		<div class="header_bar">
+			<div><a class="header_back_btn" href="/user_home">Cancel</div></a>
+			<center><a href="/"><img class="header_logo" src="images/Logo.png"></a></center>
 		</div>
 
+		<div id="body">
+			<h2 class="body_header_text">Select When to Send Remindly</h2>
 			
+				<center><label for="datetime">Choose a date and time:</label></center>
+				<br>
+					<div id="wrap">
+						
+						<center><input type="text" id="datetime"/> </center>
+						<div id="hidden">
+							<center>
+								<input type="text" id="date"/>
+								<input type="text" id="time"/>
 
+							</center>
+						</div>
+						<div id="outlet"></div>
+					</div>
+
+					<div class="clear_footer"></div>
+
+			<div class="nav_footer">
+				<div class="nav_footer_btn_container">
+					<a class="nav_footer_link" href="/message"><div class="nav_footer_button_option next">Send Message&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" href="/who"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a>
+				</div>
+				<div class="nav_footer_btn_buffer"></div>
+
+			</div>
+		</div>	
+	</div>		
 		
-	</div>
-		<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
 
-		<script src="js/main.js"></script>
+	<script src="js/picker.js"></script>
+	<script src="js/picker.date.js"></script>
+	<script src="js/picker.time.js"></script>
+	<script src="js/datetime.js"></script>
 
 </body>
 </html>
