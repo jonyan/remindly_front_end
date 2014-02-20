@@ -24,27 +24,45 @@
 
 		<div id="body">
 			<h2 class="body_header_text">Select When to Send Remindly</h2>
+
+
 			
-				<!-- 	### Extend [pickadate v3](http://http://amsul.github.io/pickadate.js) with [date.js](http://www.datejs.com/) to enable keyboard typing and the parsing of any date format.
+			<!-- 	### Extend [pickadate v3](http://http://amsul.github.io/pickadate.js) with [date.js](http://www.datejs.com/) to enable keyboard typing and the parsing of any date format.
 
-				Type or pick a date: -->
-			<center><label for="datetime">Choose a date and time:</label></center>
-			<br>
-			<div id="wrap">
-				
-				<center><input type="text" id="datetime"/></center>
+			Type or pick a date: -->
 
-				<div id="hidden">
-					<center>
-						<input type="text" id="date"/>
-						<input type="text" id="time"/>
-					</center>
+			<form id="set_datetime_form" role="form" method="get" action="/message">
+				<table id ="hidden_form_data">
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.0.recipient}} name="recipient1"></td>
+					</tr>
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.1.recipient}} name="recipient2"></td>
+					</tr>
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.2.recipient}} name="recipient3"></td>
+					</tr>
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.3.recipient}} name="recipient4"></td>
+					</tr>
+				</table>
+
+				<br>
+
+				<div id="wrap">
+					<center><input type="text" name="datetime" id="datetime"/></center>
+					<div id="hidden">
+						<center>
+							<input type="text" id="date"/>
+							<input type="text" id="time"/>
+						</center>
+					</div>
+					<!-- outlet div brings up actual calendar -->
+					<div id="outlet"></div> 
 				</div>
-
-				<!-- outlet div brings up actual calendar -->
-				<div id="outlet"></div> 
-
-			</div>
+			
+				<input type="submit" id="submitBtn" value="Submit">			
+			</form>
 
 			<div class="clear_footer"></div>
 
@@ -52,7 +70,7 @@
 
 				<div class="nav_footer_btn_container">
 
-					<a class="nav_footer_link" href="/message"><div class="nav_footer_button_option next">Send&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" href="/message"><div class="nav_footer_button_option next">Compose&nbsp;&gt;</div></a>
 					<a class="nav_footer_link" href="/who"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a>
 
 				</div>

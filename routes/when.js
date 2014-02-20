@@ -21,7 +21,7 @@ exports.addRecipients = function(req, res) { 
 					{"recipient":req.query.recipient4}
 				]
 			}
-		}
+	}
 
 	res.render('when', recipients);
  };

@@ -22,7 +22,41 @@
 		<div id="body">
 			<h2 class="body_header_text">Send a Remindly to...</h2>
 
-		
+			<form id="send_message_form" role="form" method="post" action="/message">
+				<table id ="hidden_form_data">
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.0.recipient}} name="recipient1"></td>
+					</tr>
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.1.recipient}} name="recipient2"></td>
+					</tr>
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.2.recipient}} name="recipient3"></td>
+					</tr>
+					<tr>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.3.recipient}} name="recipient4"></td>
+					</tr>
+				</table>
+
+				<input type="text" name="datetime" id="datetime"/>
+
+				<div id="message_container">
+
+					<h4 id="message_label">From:</h3>
+					<div id="from_field_container">
+						<center><input id="from_textbox" type="text" placeholder="Enter name..."></center>
+					</div>
+
+					<h4 id="message_label">Message:</h3>
+					<div id="message_field_container">
+						<center><textarea id="message_textbox" maxlength="160" placeholder="Max 160 chars"></textarea></center>
+					</div>
+
+				</div>
+
+				<input type="submit" id="submitBtn" value="Submit">			
+			</form>
+
 			<div id="message_container">
 
 				<h4 id="message_label">From:</h3>
@@ -32,10 +66,10 @@
 
 				<h4 id="message_label">Message:</h3>
 				<div id="message_field_container">
-					<center><textarea id="message_textbox" maxlength="130" placeholder="Max 130 chars"></textarea></center>
+					<center><textarea id="message_textbox" maxlength="160" placeholder="Max 160 chars"></textarea></center>
 				</div>
 
-		</div>
+			</div>
 	
 		<div class="clear_footer"></div>
 

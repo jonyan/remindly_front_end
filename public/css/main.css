@@ -116,6 +116,8 @@ body {
 
 
 	.nav_footer_button {
+		margin-top: 8px;
+		margin-bottom: 8px;
 		margin-right: auto;
 		margin-left: auto;
 		border:1px solid black;
@@ -230,7 +232,7 @@ body {
 	}
 
 
-	#recipient_textbox { 
+	.recipient_textbox { 
 		font-size: .7em;
 		font-family: "helvetica neue";
 		font-weight: 400;
@@ -509,6 +511,8 @@ body {
 		z-index: -1;
 		text-align: center;
 		width: 100%;
+		/*background-color: rgba(122, 205, 75, .5);*/
+
 	}
 
 	
@@ -633,7 +637,7 @@ body {
 	}
 
 
-	#recipient_textbox { 
+	.recipient_textbox { 
 		font-size: .7em;
 		font-family: "helvetica neue";
 		font-weight: 400;
