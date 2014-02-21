@@ -27,7 +27,10 @@
 			<!-- Hidden form data to pass: user name and phone number -->
 			<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
 			<input id="user_name_field" type="hidden" value={{user_name}} name="user_name">
+
 			<!-- End of hidden form -->
+			<!-- submit button to get clicked/triggered in user_home_JS to make
+			get request to get pending remindly data and display on page -->
 
 
 			<div class="clear_footer"></div>
@@ -38,6 +41,7 @@
 				</div>
 			</div>
 
+			<button type="button" id="get_pending_remindlys" onclick="getPendingRemindlys()">
 
 		</div>
 	</div>

@@ -18,9 +18,21 @@
 			<div><a class="header_back_btn" href="/user_home">Cancel</div></a>
 			<center><a href="/"><img class="header_logo" src="images/Logo.png"></a></center>
 		</div>
+
 		
+<!--
+		<button type="button" id="get_pending_remindlys" onclick="displayHeaderInfo()">
+			<script type="text/javascript">
+			var button = document.getElementById("get_pending_remindlys");
+			button.click();
+
+			function displayHeaderInfo() {
+				console.log("clicked");
+			}
+		</script>-->
+
 		<div id="body">
-			<h2 class="body_header_text">Send a Remindly to...</h2>
+			<h2 class="body_header_text">Send a Remindly to {{recipients.0.recipient}}, {{recipients.1.recipient}}, {{recipients.2.recipient}}, {{recipients.3.recipient}} at {{time}}!</h2>
 
 			<form id="send_message_form" role="form" method="post" action="/message">
 				<!-- Hidden form data to pass: user phone number, name, and recipients  -->
@@ -72,17 +84,22 @@
 				</div> -->
 
 			</div>
-	
-		<div class="clear_footer"></div>
 
-		<div class="nav_footer">
-			<div class="nav_footer_btn_container">
-				<a class="nav_footer_link" onclick="sendMessageData()" ><div class="nav_footer_button next">Send Remindly&nbsp;&gt;</div></a>
-				<!-- <a class="nav_footer_link" href="/who"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a> -->
+
+			<div class="clear_footer"></div>
+
+			<div class="nav_footer">
+
+				<div class="nav_footer_btn_container">
+
+					<a class="nav_footer_link" onclick="sendMessageData()"><div class="nav_footer_button_option next">Send Remindly&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" href="/when"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a>
+
+				</div>
+
+				<div class="nav_footer_btn_buffer"></div>
+
 			</div>
-			<div class="nav_footer_btn_buffer"></div>
-
-		</div>
 	</div>
 
 
