@@ -31,12 +31,12 @@ console.log("click worked");
 	
 
 
+	var user_phone = $('#user_phone').val();
+	var user_name = $('#user_name').val();
 
 
 
 function sendMessageData() {
-	var user_phone = $('#user_phone').val();
-	var user_name = $('#user_name').val();
 	var recipient1 = $('#recipient1').val();
 	var recipient2 = $('#recipient2').val();
 	var recipient3 = $('#recipient3').val();
@@ -92,5 +92,5 @@ function send_remindly(user_phone, recipients, time, message) {
 function onFinish(result) {
 	console.log(result);
 	console.log("Success: " + result["success"]);
-	window.location.href = "/user_home";
+	window.location.href = "/user_home?user_phone=" + user_phone + "&user_name=" + user_name;
 }

@@ -15,9 +15,13 @@ function get_users_remindlys(user_phone) {
 		}, onReceiveRemindlys);
 }
 
+
 function onReceiveRemindlys(result) { 
+	// .insertAfter('.body_header_text');
 	for(var i in result) {
-		var message = result[i];
+		 var message = result[i];
+		// var table = "<table id='pending_remindly_table'><tr><td>Message #: " + i + "<td></tr><tr><td> Recipients: " + message['recipients'] + "</td></tr><tr><td>Date to Send: " + message['time'] + "</td></tr><tr><td>Message: " + message['message'] + "</td></tr></table>";
+		$("<table id='pending_remindly_table'><tr><th>Message #:<th><td>" + i + "</td></tr><tr><td> Recipients: " + message['recipients'] + "</td></tr><tr><td>Date to Send: " + message['time'] + "</td></tr><tr><td>Message: " + message['message'] + "</td></tr></table>").insertAfter('.body_header_text')
 		console.log("Message " + i);
 		console.log("   Recipients: " + message['recipients']);
 		console.log("		Time: " + message['time']);
