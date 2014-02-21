@@ -3,8 +3,11 @@ exports.addRecipients = function(req, res) { 
 
 	console.log("in when.js");
 	if(req.query.me) {
-		var recipients = {
-			recipientsArr: [
+
+		var data = {
+			'user_phone' : req.query.user_phone,
+			'user_name' : req.query.user_name,
+			'recipients': [
 				{"recipient":"self"},
 				{"recipient":req.query.recipient1},
 				{"recipient":req.query.recipient2},
@@ -13,8 +16,11 @@ exports.addRecipients = function(req, res) { 
 			]
 		}
 	} else {
-			var recipients = {
-				recipientsArr: [
+			var data = {
+				'user_phone' : req.query.user_phone,
+				'user_name' : req.query.user_name,
+
+				'recipients': [
 					{"recipient":req.query.recipient1},
 					{"recipient":req.query.recipient2},
 					{"recipient":req.query.recipient3},
@@ -23,5 +29,5 @@ exports.addRecipients = function(req, res) { 
 			}
 	}
 
-	res.render('when', recipients);
+	res.render('when', data);
  };

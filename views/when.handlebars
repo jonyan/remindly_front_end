@@ -32,21 +32,26 @@
 			Type or pick a date: -->
 
 			<form id="set_datetime_form" role="form" method="get" action="/message">
+
+				<!-- Hidden form data to pass: user phone number, name, and recipients  -->
+				<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
+				<input id="user_name" type="hidden" value={{user_name}} name="user_name">
+				
 				<table id ="hidden_form_data">
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.0.recipient}} name="recipient1"></td>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipients.0.recipient}} name="recipient1"></td>
 					</tr>
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.1.recipient}} name="recipient2"></td>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipients.1.recipient}} name="recipient2"></td>
 					</tr>
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.2.recipient}} name="recipient3"></td>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipients.2.recipient}} name="recipient3"></td>
 					</tr>
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.3.recipient}} name="recipient4"></td>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipients.3.recipient}} name="recipient4"></td>
 					</tr>
 				</table>
-
+				<!-- End of hidden form -->
 				<br>
 
 				<div id="wrap">

@@ -9,6 +9,7 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
+var new_user = require('./routes/new_user');
 var verification = require('./routes/verification');
 var user_home = require('./routes/user_home');
 var who = require('./routes/who');
@@ -43,6 +44,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
+app.get('/new_user', new_user.create);
 app.get('/verification', verification.login);
 // app.get('/verification', verification.getMessage);
 app.get('/user_home', user_home.verify);

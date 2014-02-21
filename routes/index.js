@@ -5,5 +5,16 @@
 
 
 exports.view = function(req, res){
-	res.render('index');
+	console.log(req.query.message);
+	if (req.query.message == "error1") {
+		var message = {
+			"message" : "Invalid phone number, please try again!"
+		}
+	} else {
+		var message = {
+			"message" : "Login with cell number to send a delayed text reminder!"
+		}
+	}
+	console.log(message);
+	res.render('index', message);
 };

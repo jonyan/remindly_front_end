@@ -1,9 +1,15 @@
 
-// req.query.pin and send this to backend to make sure it matches the
-// correct pin in the database.  Backend sends us message letting us know
-// it was a success or failure.  Upon success get the user's pending 
-// remindly's and render the user_home.
+var post_request = require('request-json');
+var request = require('request');
 
 exports.verify = function(req, res){
-	res.render('user_home');
+
+	console.log("submit button clicked using jquery");
+	// console.log(req.query.user_phone);
+	// console.log(req.query.user_name);
+	var user_data = {
+		"user_phone" : req.query.user_phone,
+		"user_name" : req.query.user_name
+	}
+	res.render("user_home", user_data);
 };

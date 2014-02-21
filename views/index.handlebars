@@ -1,4 +1,4 @@
-<!-- HOMESCREEN -->
+<!-- LOGIN SCREEN -->
 
 <!doctype html>
 
@@ -16,15 +16,17 @@
 	<div id="body">
 		<br><br>
 		<center><a href="/"><img id="home_page_logo" src="images/logo_color.png"></a></center>
-		<center><h4 class="body_header_text">Login with cell number to send a delayed text reminder!</h4></center>
+		<center><h4 class="body_header_text">{{message}}</h4></center>
 
 
 		<div id="login_text_field_container">
-			<form>
-			<input type="tel" id="login_field" placeholder="( _ _ _ ) _ _ _ - _ _ _ _"/>
-			<div id="next_button_container"><a href="/user_home"><img id="next_button" src="images/next.png"></a></div>
+			<!-- <form name="login_form" action="/user_home" method="get" > -->
+			<input type="tel" id="login_field" name="login_field" placeholder="( _ _ _ ) _ _ _ - _ _ _ _"/>
+			<div id="next_button_container"><a onclick="verifyLogin()" ><img id="next_button" src="images/next.png"></a></div>
+			<!-- <div id="next_button_container"><input type="image" onclick="verifyLogin()" style="width:35px; height: auto;" src="images/next.png"></div> -->
+			<!-- <input type="submit" id="login_submitBtn" value="Submit"> -->
 			</form>
-		</div>
+		</div> 
 
 		<div id="delayed_sms_reminder_img_container">
 			<center><img id="delayed_sms_reminder_img" src="images/delayed_sms_reminder_logo_large.png"></center>
@@ -68,6 +70,7 @@
 		<script src="js/jquery-1.11.0.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/login_page.js"></script>
 
 </body>
 </html>

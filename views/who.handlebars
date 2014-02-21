@@ -21,10 +21,15 @@
 		<div id="body">
 			<h2 class="body_header_text">Send a Remindly to...</h2>
 
+			
+			<form id="add_contacts_form" role="form" method="get" action="/when">
 
+			<!-- Hidden form data to pass: user name and phone number -->
+			<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
+			<input id="user_name" type="hidden" value={{user_name}} name="user_name">
+			<!-- End of hidden form -->
 			<div id="contacts_container">
 				<center>
-					<form id="add_contacts_form" role="form" method="get" action="/when">
 						<table>
 							<tr>
 								<td class="contact_row"><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Me</label></div></td>

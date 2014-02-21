@@ -621,6 +621,11 @@ body {
 		height: auto;
 	}
 
+	#login_submitBtn {
+		visibility: hidden;
+		position: absolute;
+	}
+
 	/* END LOGIN PAGE STYLING */
 
 
