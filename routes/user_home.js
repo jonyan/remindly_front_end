@@ -1,7 +1,4 @@
 
-var post_request = require('request-json');
-var request = require('request');
-
 exports.verify = function(req, res){
 
 	console.log("submit button clicked using jquery");
