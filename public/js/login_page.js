@@ -14,11 +14,6 @@ function check_user(phone_number) {
 	console.log("Just called POST!");
 }
 
-// function onRedirect(res, req) {
-// 	console.log("in on redirect");
-// 	res.render('user_home');
-// }
-
 function onReceiveVerification(result) {
 	console.log("Success: " + result["success"] + " Name: " + result["name"]);
 	var phone_number = $('#login_field').val();

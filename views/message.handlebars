@@ -24,23 +24,28 @@
 
 			<form id="send_message_form" role="form" method="post" action="/message">
 				<!-- Hidden form data to pass: user phone number, name, and recipients  -->
-				<input id="user_phone_number" type="text" value={{user_phone}} name="user_phone_number">
-				<input id="user_name" type="text" value={{user_name}} name="user_name">
+				<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
+				<input id="user_name" type="hidden" value={{user_name}} name="user_name">
 				
 				<table id ="hidden_form_data">
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.0.recipient}} name="recipient1"></td>
+						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipients.0.recipient}} name="recipient1"></td>
 					</tr>
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.1.recipient}} name="recipient2"></td>
+						<td class="contact_row"><input class="textbox" id="recipient2" type="hidden" value={{recipients.1.recipient}} name="recipient2"></td>
 					</tr>
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.2.recipient}} name="recipient3"></td>
+						<td class="contact_row"><input class="textbox" id="recipient3" type="hidden" value={{recipients.2.recipient}} name="recipient3"></td>
 					</tr>
 					<tr>
-						<td class="contact_row"><input class="textbox" id="recipient1" type="hidden" value={{recipientsArr.3.recipient}} name="recipient4"></td>
+						<td class="contact_row"><input class="textbox" id="recipient4" type="hidden" value={{recipients.3.recipient}} name="recipient4"></td>
 					</tr>
 				</table>
+
+				<input id="time" type="hidden" value={{time}} name="time">
+
+
+
 				<!-- End of hidden form -->
 
 				<div id="message_container">
@@ -52,7 +57,6 @@
 
 				</div>
 
-				<input type="submit" id="submitBtn" value="Submit">			
 			</form>
 <!-- 
 			<div id="message_container">
@@ -73,7 +77,7 @@
 
 		<div class="nav_footer">
 			<div class="nav_footer_btn_container">
-				<a class="nav_footer_link" href="/when"><div class="nav_footer_button next">When&nbsp;&gt;</div></a>
+				<a class="nav_footer_link" onclick="sendMessageData()" ><div class="nav_footer_button next">Send Remindly&nbsp;&gt;</div></a>
 				<!-- <a class="nav_footer_link" href="/who"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a> -->
 			</div>
 			<div class="nav_footer_btn_buffer"></div>
@@ -86,6 +90,8 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 
 		<script src="js/main.js"></script>
+		<script src="js/message_send.js"></script>
+
 
 
 </body>
