@@ -87,12 +87,10 @@ function addTextField() {
 
 }
 
-function cancelAction() {
-	
-}
-
-function backAction() {
-	parent.history.back();
+function goToHomeAction() {
+	$.removeCookie("temp_datetime");
+	$.removeCookie("temp_message");
+	window.location.href = "/user_home";
 }
 
 function isLoggedIn() {
@@ -102,5 +100,7 @@ function isLoggedIn() {
 function logout() {
 	$.removeCookie("user_phone");
 	$.removeCookie("name");
+	$.removeCookie("temp_datetime");
+	$.removeCookie("temp_message");
 	window.location.href = "/";
 }

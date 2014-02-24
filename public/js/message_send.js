@@ -4,8 +4,15 @@ $(function() {
 	if(!isLoggedIn()) {
 		console.log("Not logged in, redirecting to home page");
 		window.location.href = "/?message=error2";
+	} else if($.cookie("temp_message")) {
+		$("#message_textbox").val($.cookie("temp_message"))
 	}
 });
+
+function messageBackAction() {
+	$.cookie("temp_message", $("#message_textbox").val());
+	parent.history.back();
+}
 
 function displayHeaderInfo() {
 	console.log("click worked");
@@ -88,6 +95,5 @@ function send_remindly(user_phone, recipients, time, message) {
 }
 
 function onFinish(result) {
-	console.log("Working?");
-	window.location.href = '/user_home';
+	goToHomeAction();
 }
