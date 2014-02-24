@@ -6,6 +6,5 @@ function submitWhenData() {
 	} else {
 		console.log("triggering form");
 		$('#submitBtn').click();
-
 	}
 }
