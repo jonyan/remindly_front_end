@@ -7,8 +7,30 @@ $(function() {
 
 function verifyLogin() {
 	var phone_number = $("#user_phone").val();
-	check_user(phone_number);
+	console.log(phone_number);
+	var nondigits = /\D/g;
+	if (phone_number == "") {
+		console.log("empty field");
+		alert("You must input your phone number to log in.");
+	}
+	else if (phone_number.length > 10 || nondigits.test(phone_number)) {
+		console.log("too long");
+		alert("Please enter a valid 10 digit phone number.");
+	}
+	else { 
+		check_user(phone_number);
+	}
 }
+
+// function isNumber(phone_number) {
+// 	var obtainDatePttrn = "dddddddddd";
+// 	for(int i = 0; i < phone_number.length; i++) {
+// 		if (!isDigit(phone_number[i])){
+// 			return false;
+// 		}
+// 	}
+// 	return true;
+// }
 
 function check_user(phone_number) { 
 	console.log(phone_number);
