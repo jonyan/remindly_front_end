@@ -22,7 +22,10 @@ function get_users_remindlys(user_phone) {
 
 function onReceiveRemindlys(result) { 
 	console.log(result.length);
-	$("<center><p id='numpending'>You have <b>" + result.length + "</b> pending remindly(s)</p></center>").insertAfter('.body_header_text')
+	var userName = $.cookie("name");
+
+	$("#body").prepend($("<h2 class='body_header_text'>Hi, " + userName + "!</h2>"));
+	$("<p id='numpending'>You have <b>" + result.length + "</b> pending remindly(s)</p>").insertAfter('.body_header_text')
 
 	for(var i in result) {
 		 var message = result[i];
@@ -46,20 +49,8 @@ function onReceiveRemindlys(result) {
 
 		// style 4:
 		$("<b>Remindly #" + msgnum + "</b> <p id='msginfo'>To: " + message['recipients'] + "</p>" +
-		 "<table id='pending_remindly_table'><tr><td>" + extractedmsg+ "</tr><tr><td><i>To be sent on " + datetime[0] + " at " + datetime[1] + "</i></td></tr></table><hr>").insertAfter('#numpending')
-
-	for(var i in result) {
-		 var message = result[i];
-		$("<table id='pending_remindly_table'><tr><th>Message #:<th><td>"
-			+ i + "</td></tr><tr><td> Recipients: " + message['recipients'] 
-			+ "</td></tr><tr><td>Date to Send: " + message['time'] + "</td></tr><tr><td>Message: "
-			+ message['message'] + "</td></tr></table>").insertAfter('.body_header_text');
-		console.log("Message " + i);
-		console.log("   Recipients: " + message['recipients']);
-		console.log("	Time: " + message['time']);
-		console.log(" 	Message: " + message['message']);
-		console.log("	Status: " + message['status']);
-	} 
+		 "<table id='pending_remindly_table'><tr><td>" + extractedmsg+ "</tr><tr><td><i>To be sent on " + datetime[0] + " at " + datetime[1] + "</i></td></tr></table><hr>").insertAfter('#numpending');
+	}
 }
 
 function renderWhoPage() {

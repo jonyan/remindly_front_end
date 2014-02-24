@@ -464,6 +464,9 @@ body {
 	font-size: .9em;
 }
 
+#headerinfo {
+	visibility: hidden;
+}
 
 
 
@@ -866,28 +869,31 @@ body {
 
 
 
-#message_textbox { 
-	padding-left: .5em;
-	font-size: 1em;
-	font-family: "helvetica neue";
-	font-weight: 200;
-  border: 1px solid #848484; 
-  -webkit-border-radius: 10px; 
-  -moz-border-radius: 10px; 
-  border-radius: 10px; 
-  outline:0; 
-  height:7.5em; 
-  width: 88%; 
-} 
+	#message_textbox { 
+		padding-left: .5em;
+		font-size: 1em;
+		font-family: "helvetica neue";
+		font-weight: 200;
+	  border: 1px solid #848484; 
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:7.5em; 
+	  width: 88%; 
+	} 
 
-#message_label {
-	margin-bottom: .2em;
-	padding-left: 5%;
-	font-family: "helvetica neue";
-	font-weight: 100;
-	font-size: 1em;
-}
+	#message_label {
+		margin-bottom: .2em;
+		padding-left: 5%;
+		font-family: "helvetica neue";
+		font-weight: 100;
+		font-size: 1em;
+	}
 
+	#headerinfo {
+		visibility: hidden;
+	}
 
 
 
