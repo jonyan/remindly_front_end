@@ -87,6 +87,14 @@ function addTextField() {
 
 }
 
+function cancelAction() {
+	
+}
+
+function backAction() {
+	parent.history.back();
+}
+
 function isLoggedIn() {
 	return $.cookie("user_phone") && $.cookie("name");
 }
