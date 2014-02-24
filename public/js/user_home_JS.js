@@ -1,8 +1,6 @@
-
 $("#get_pending_remindlys").click();
 
 function getPendingRemindlys() {
-
 	if(!isLoggedIn()) {
 		console.log("Not logged in, redirecting to home page");
 		window.location.href = "/?message=error2";
