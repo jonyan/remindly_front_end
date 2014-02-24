@@ -1,7 +1,5 @@
 
-exports.verify = function(req, res){
-
-	console.log("submit button clicked using jquery");
+exports.verify = function(req, res) {
 	// console.log(req.query.user_phone);
 	// console.log(req.query.user_name);
 	var user_data = {

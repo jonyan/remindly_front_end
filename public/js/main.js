@@ -74,11 +74,25 @@ $('#me').change(function() {
 
 function addTextField() {
 	if (numTextFields > 0) {
-		var newTextField = "<tr id='recipient" + recipientNumber + "'><td class='contact_row'><input class='recipient_textbox' id='recipient" + recipientNumber + "' type='tel' onclick='addTextField()' placeholder='Add " + numTextFields + " more phone #s or names...' name='recipient" + recipientNumber +"'></td></tr>"; 
+		var newTextField = "<tr id='recipient" + recipientNumber
+			+ "'><td class='contact_row'><input class='recipient_textbox' id='recipient"
+			+ recipientNumber + "' type='tel' onclick='addTextField()' placeholder='Add "
+			+ numTextFields + " more phone #s or names...' name='recipient"
+			+ recipientNumber +"'></td></tr>";
 		$(newTextField).insertAfter('#recipient' + (recipientNumber - 1));
 		numTextFields--;
 		recipientNumber++;
 	}
 	console.log(numTextFields);
 
+}
+
+function isLoggedIn() {
+	return $.cookie("user_phone") && $.cookie("name");
+}
+
+function logout() {
+	$.removeCookie("user_phone");
+	$.removeCookie("name");
+	window.location.href = "/";
 }
