@@ -19,8 +19,8 @@ function check_user(phone_number) {
 }
 
 function onReceiveVerification(result) {
-	console.log("Success: " + result["success"] + " Name: " + result["name"]);
 	var phone_number = $('#user_phone').val();
+	var name = result["name"];
 	if (result["success"] == 1) { // if user exists
 		$.cookie("user_phone", phone_number);
 		$.cookie("name", name);
