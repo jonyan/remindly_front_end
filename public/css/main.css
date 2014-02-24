@@ -78,7 +78,7 @@ body {
 
 	.header_bar {
 		background-color: rgba(122, 205, 75, 1);
-		height: 2em;
+		height: 2.2em;
 	}
 
 	.header_back_btn {
@@ -102,7 +102,7 @@ body {
 	/* BODY STYLING */
 
 	.body_header_text {
-		font-size: .8em;
+		font-size: 1.1em;
 		font-family: "helvetica neue";
 		font-weight: 200;
 		text-align: center;
@@ -120,20 +120,21 @@ body {
 	}
 
 	.nav_footer {
-		/*position: absolute;*/
+		position: fixed;
 		bottom: 0;
 		width: 100%;
-		z-index: -1;
+		height: 2.2em;
 		text-align: center;
 		width: 100%;
+		background-color: rgba(122, 205, 75, 1);
 	}
 
 	
 	.nav_footer_link {
 		font-size: .8em;
-		color: black;
+		color: white;
 		text-decoration: none;
-
+		font-weight: 400;
 	}
 
 
@@ -142,7 +143,7 @@ body {
 		margin-bottom: 8px;
 		margin-right: auto;
 		margin-left: auto;
-		border:1px solid black;
+		border:.11em solid white;
 		padding:5px; 
 		width: 85%;
 		height: 1.3em;
@@ -152,14 +153,17 @@ body {
 	
 
 	.nav_footer_button_option {
-		display: inline-block;
+		margin-top: 8px;
+		margin-bottom: 8px;
+
 		margin-right: auto;
 		margin-left: auto;
-		border:1px solid black;
-		width: 25%;
+		border:.11em solid white;
+		/*width: 25%;*/
 		padding:5px; 
 		height: 1.3em;
 		border-radius:10px;
+		min-width: 35%;
 	}
 
 	.next {
@@ -191,7 +195,7 @@ body {
 		text-align: center;
 	}
 
-	#login_field {
+	#user_phone {
     border: 1px solid #c4c4c4;
     width: 16em;
     height: 2em;
@@ -205,13 +209,13 @@ body {
     -webkit-box-shadow: 0px 0px 8px #d9d9d9;
 }
 
-	input#login_field::-webkit-input-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
-	input#login_field::-moz-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
-	input#login_field:-ms-input-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
-	input#login_field:-moz-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
+	input#user_phone::-webkit-input-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
+	input#user_phone::-moz-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
+	input#user_phone:-ms-input-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
+	input#user_phone:-moz-placeholder { font-size: 1.2em; text-align: center; letter-spacing: .1em; }
 
 
-	#login_field:focus { 
+	#user_phone:focus { 
     outline: none;
     border: 1px solid #7bc1f7;
     box-shadow: 0px 0px 8px #7bc1f7;
@@ -237,11 +241,23 @@ body {
 		height: auto;
 	}
 
+	#get_pending_remindlys {
+		visibility: hidden;
+	}
+
+	.hidden_button_container {
+
+	}
+
 	/* END LOGIN PAGE STYLING */
 
 	/* NEW USER PAGE STYLING */
 
-	#name_field {
+	#new_user_field_label {
+		font-size: .9em;
+	}
+
+	#user_name {
 		font-size: .7em;
 		font-family: "helvetica neue";
 		font-weight: 400;
@@ -251,7 +267,7 @@ body {
 	  border-radius: 10px; 
 	  outline:0; 
 	  height:2em; 
-	  width: 60%; 
+	  width: 80%; 
 	  padding-left:10px; 
 	  padding-right:10px; 
 	}
@@ -367,6 +383,7 @@ body {
 	}
 
 	#submitBtn {
+		visibility: hidden;
 		-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 		-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 		box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -424,22 +441,9 @@ body {
 
 /* MESSAGE PAGE STYLING */
 
-#from_textbox {
-	font-size: 1em;
-	width: 88%;
-	height: 1em;
-	margin-right: auto;
-	margin-left: auto;
-	border-radius: 10px; 
-  outline:0; 
-  border: 1px solid #848484; 
-  -webkit-border-radius: 10px; 
-  -moz-border-radius: 10px; 
-	font-family: "helvetica neue";
-	font-weight: 200;
-}
 
 #message_textbox { 
+	padding-left: .5em;
 	font-size: 1em;
 	font-family: "helvetica neue";
 	font-weight: 200;
@@ -456,8 +460,8 @@ body {
 	margin-bottom: .2em;
 	padding-left: 5%;
 	font-family: "helvetica neue";
-	font-weight: 100;
-	font-size: 1em;
+	font-weight: 200;
+	font-size: .9em;
 }
 
 
@@ -487,6 +491,9 @@ body {
 		/*height: 100%;*/
 		margin-right: auto;
 		margin-left: auto;
+		min-height: 650px;
+				position: relative;
+
 	}
 
 	#body {
@@ -529,7 +536,7 @@ body {
 	/* BODY STYLING */
 
 	.body_header_text {
-		font-size: 1em;
+		font-size: 1.5em;
 		font-family: "helvetica neue";
 		font-weight: 200;
 		opacity: .7;
@@ -538,29 +545,31 @@ body {
 
 	/* FOOTER STYLING */
 
-	.clear_footer {
+/*	.clear_footer {
 		width: 100%;
 		height: 5em;
 		margin-right: auto;
 		margin-left: auto;
-	}
+	}*/
 
 	.nav_footer {
-		/*position: absolute;*/
+		position: absolute;
 		bottom: 0;
 		width: 100%;
-		z-index: -1;
+		/*z-index: -1;*/
 		text-align: center;
 		width: 100%;
-		/*background-color: rgba(122, 205, 75, .5);*/
+		height: 3em;
+		background-color: rgba(122, 205, 75, 1);
 
 	}
 
 	
 	.nav_footer_link {
 		font-size: .8em;
-		color: black;
+		color: white;
 		text-decoration: none;
+		font-weight: 100;
 
 	}
 
@@ -568,20 +577,25 @@ body {
 	.nav_footer_button {
 		margin-right: auto;
 		margin-left: auto;
-		border:1px solid black;
+		border:.11em solid white;
 		padding:5px; 
 		width: 85%;
 		height: 1.3em;
 		border-radius:10px;
+		margin-top: .9em;
+		margin-bottom: .75em;
+
 	}
 
 	
 
 	.nav_footer_button_option {
+		margin-top: .9em;
+		margin-bottom: .75em;
 		display: inline-block;
 		margin-right: auto;
 		margin-left: auto;
-		border:1px solid black;
+		border:.11em solid white;
 		width: 27%;
 		padding:5px; 
 		height: 1.3em;
@@ -617,7 +631,7 @@ body {
 		text-align: center;
 	}
 
-	#login_field {
+	#user_phone {
     border: 1px solid #c4c4c4;
     width: 16em;
     height: 2em;
@@ -631,13 +645,13 @@ body {
     -webkit-box-shadow: 0px 0px 8px #d9d9d9;
 }
 
-	input#login_field::-webkit-input-placeholder {text-align: center; letter-spacing: .2em; }
-	input#login_field::-moz-placeholder { text-align: center; letter-spacing: .2em; }
-	input#login_field:-ms-input-placeholder { text-align: center; letter-spacing: .2em; }
-	input#login_field:-moz-placeholder { text-align: center; letter-spacing: .2em; }
+	input#user_phone::-webkit-input-placeholder {text-align: center; letter-spacing: .2em; }
+	input#user_phone::-moz-placeholder { text-align: center; letter-spacing: .2em; }
+	input#user_phone:-ms-input-placeholder { text-align: center; letter-spacing: .2em; }
+	input#user_phone:-moz-placeholder { text-align: center; letter-spacing: .2em; }
 
 
-	#login_field:focus { 
+	#user_phone:focus { 
     outline: none;
     border: 1px solid #7bc1f7;
     box-shadow: 0px 0px 8px #7bc1f7;
@@ -663,15 +677,20 @@ body {
 	}
 
 	#get_pending_remindlys {
+		/*position: relative;*/
 		visibility: hidden;
-		position: absolute;
+		/*position: absolute;*/
+	}
+
+	.hidden_button_container {
+
 	}
 
 	/* END LOGIN PAGE STYLING */
 
 	/* NEW USER PAGE STYLING */
 
-	#name_field {
+	#user_name {
 		font-size: .7em;
 		font-family: "helvetica neue";
 		font-weight: 400;
@@ -846,21 +865,6 @@ body {
 	/* MESSAGE PAGE STYLING */
 
 
-#from_textbox {
-	padding-left: .5em;
-	font-size: 1em;
-	width: 88%;
-	height: 1.8em;
-	margin-right: auto;
-	margin-left: auto;
-	border-radius: 10px; 
-  outline:0; 
-  border: 1px solid #848484; 
-  -webkit-border-radius: 10px; 
-  -moz-border-radius: 10px; 
-	font-family: "helvetica neue";
-	font-weight: 200;
-}
 
 #message_textbox { 
 	padding-left: .5em;

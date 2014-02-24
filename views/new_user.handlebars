@@ -15,15 +15,15 @@
 
 		<div class="header_bar">
 			<div><a class="header_back_btn" href="/">Logout</div></a>
-			<center><a href="/"><img class="header_logo" src="images/Logo.png"></a></center>
+			<center><a href="/"><img class="header_logo" src="images/Logo_thicker.png"></a></center>
 		</div>
 		
 		<div id="body">
 			<h2 class="body_header_text">Welcome to Remindly!</h2>
 			<form id="new_user_form" name="new_user_form" action="/user_home" method="get" >
 				<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
-				<label for="name_field">Input name:</label>
-				<input id="name_field" type="text" name="name_field">
+				&nbsp;&nbsp;<label id="new_user_field_label" for="user_name">Input name:</label>
+				<center><input id="user_name" type="text" name="user_name"></center>
 				<td><input type="submit" id="submitBtn" value="Submit"></td>
 			</form>
 			<div class="clear_footer"></div>

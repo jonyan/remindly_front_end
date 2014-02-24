@@ -15,14 +15,14 @@
 	<div class="body_container">
 	<div id="body">
 		<br><br>
-		<center><a href="/"><img id="home_page_logo" src="images/logo_color.png"></a></center>
+		<center><a href="/"><img id="home_page_logo" src="images/homepage_logo.png"></a></center>
 		<center><h4 class="body_header_text">{{message}}</h4></center>
 
 
 		<div id="login_text_field_container">
 			<!-- <form name="login_form" action="/user_home" method="get" > -->
-			<input type="tel" id="login_field" name="login_field" placeholder="( _ _ _ ) _ _ _ - _ _ _ _"/>
-			<div id="next_button_container"><a onclick="verifyLogin()" ><img id="next_button" src="images/next.png"></a></div>
+			<input type="tel" id="user_phone" name="user_phone" placeholder="( _ _ _ ) _ _ _ - _ _ _ _"/>
+			<div id="next_button_container"><a href="#" onclick="verifyLogin()" ><img id="next_button" src="images/next.png"></a></div>
 			<!-- <div id="next_button_container"><input type="image" onclick="verifyLogin()" style="width:35px; height: auto;" src="images/next.png"></div> -->
 			<!-- <input type="submit" id="login_submitBtn" value="Submit"> -->
 			</form>
@@ -38,6 +38,7 @@
 
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="js/jquery-1.11.0.js"></script>
+		<script src="js/jquery.cookie.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/login_page.js"></script>

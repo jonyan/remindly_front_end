@@ -15,43 +15,33 @@
 	<div class="body_container">
 
 		<div class="header_bar">
-			<div><a class="header_back_btn" href="/">Logout</div></a>
+			<div><a class="header_back_btn" href="#" onclick="logout()">Logout</div></a>
 			<center><a href="/"><img class="header_logo" src="images/Logo.png"></a></center>
 		</div>
 		
 		<div id="body">
-			<h2 class="body_header_text">Hi, {{user_name}}!</h2>
-			<!-- <table id="pending_remindly_table">
-				<tr>
-					<th>Message #: </th>
-					<td id="message_number">1</td>
-				</tr>
-				<tr>
-					<th>Recipients: </th>
-					<td id="recipient1">self</td>
-					<td id="recipient2">8052676424</td>
-					<td id="recipient3"></td>
-					<td id="recipient4"></td>
-				</tr>
-				<tr>
-					<th>Date to Send: </th>
-					<td id="time">1/23/4 3:30AM</td>
-				</tr>
-				<tr>
-					<th>Message: </th>
-					<td id="message">Hello world</td>
-				</tr>
-			</table>
-			 -->
 
+			<h2 class="body_header_text">Hi, {{user_name}}!</h2>
+		
+			<h2 class="body_header_text">Pending Remindlys</h2>
+
+			<!-- Hidden form data to pass: user name and phone number -->
+			<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
+			<input id="user_name" type="hidden" value={{user_name}} name="user_name">
+
+			<!-- End of hidden form -->
+
+
+			<div class="hidden_button_container"><button type="button" id="get_pending_remindlys" onclick="getPendingRemindlys()"></div>
 
 			<div class="clear_footer"></div>
 
 			<div class="nav_footer">
 				<div class="nav_footer_btn_container">
-					<a class="nav_footer_link" onclick="renderWhoPage()"><div class="nav_footer_button">Send Remindly&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" href="#" onclick="renderWhoPage()"><div class="nav_footer_button">Send Remindly&nbsp;&gt;</div></a>
 				</div>
 			</div>
+
 
 			<!-- Hidden form data to pass: user name and phone number -->
 			<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
@@ -67,10 +57,9 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
-
+	<script src="js/jquery.cookie.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/user_home_JS.js"></script>
-
 
 </body>
 </html>

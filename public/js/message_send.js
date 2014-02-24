@@ -1,6 +1,4 @@
 
-
-
 $("#headerinfo").click();
 
 	var user_phone = $('#user_phone').val();
@@ -22,8 +20,6 @@ function displayHeaderInfo() {
 	var user_phone = $('#user_phone').val();
 	if (recipient1 == "self") {
 		recipients += "Myself";
-		// console.log("userphone: " + user_phone);
-		// console.log("at this point recipients are: " + recipients);
 	} else if(recipient1 != "name=\"recipient1\"") {
 		recipients += recipient1;
 	}
@@ -54,13 +50,12 @@ function sendMessageData() {
 	var time = $('#time').val();
 	var preMessage = $('#message_textbox').val();
 
-	var message = user_name + ": " + preMessage;
-
+	var message = $.cookie("name") + ": " + preMessage;
 
 	var recipients = "";
 
 	if (recipient1 == "self") {
-		recipients += user_phone;
+		recipients += $.cookie("user_phone");
 	} else if(recipient1 != "name=\"recipient1\"") {
 		recipients += recipient1;
 	}
@@ -77,17 +72,8 @@ function sendMessageData() {
 		recipients += "," + recipient4;
 	}
 
-	// console.log("user_phone: " + user_phone + ". user_name: " + user_name + ". recipient1: " + recipient1 
-	// 	+ ". recipient2: " + recipient2 + ". recipient3: " + recipient3 + ". recipient4: " + recipient4 + 
-	// 	". time: " + time + ". message: " + message);
-
-	send_remindly(user_phone, recipients, time, message);
-
-
+	send_remindly($.cookie("user_phone"), recipients, time, message);
 }
-
-
-
 
 function send_remindly(user_phone, recipients, time, message) { 
 	$.post("http://www.aerodroid.com/remindly/send_remindly.php",
@@ -100,7 +86,6 @@ function send_remindly(user_phone, recipients, time, message) {
 }
 
 function onFinish(result) {
-	console.log(result);
-	console.log("Success: " + result["success"]);
-	window.location.href = "/user_home?user_phone=" + user_phone + "&user_name=" + user_name;
+	console.log("Working?");
+	window.location.href = '/user_home';
 }

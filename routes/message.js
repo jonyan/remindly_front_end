@@ -1,11 +1,5 @@
 	
-exports.setWhen = function(req, res) {  
-	console.log("in message.js");
-	console.log(req.query.user_phone);
-	console.log(req.query.user_name);
-
-
-
+exports.setWhen = function(req, res) { 
 	var CHAR_LEN_OF_MONTH = 3;
 	var datetime = req.query.datetime;
 	// var datetime = "Thursday, Feb 20, 2014 @ 2:30 AM";
@@ -70,14 +64,10 @@ exports.setWhen = function(req, res) { 
 	var datetimeResult = month + "/" + date + "/" + year + "_" + time + amPm; 
 		// var datetimeResult = month + "/" + date + "/" + year + time + amPm; 
 
-
-
 	console.log("datetimeresult: " + datetimeResult);
 
 	if(req.query.me) {
 		var data = {
-			'user_phone' : req.query.user_phone,
-			'user_name' : req.query.user_name,
 			'recipients' : [
 				{"recipient":"self"},
 				{"recipient":req.query.recipient1},
@@ -90,8 +80,6 @@ exports.setWhen = function(req, res) { 
 		}
 	} else {
 			var data = {
-				'user_phone' : req.query.user_phone,
-				'user_name' : req.query.user_name,
 				'recipients' : [
 					{"recipient":req.query.recipient1},
 					{"recipient":req.query.recipient2},
@@ -101,8 +89,6 @@ exports.setWhen = function(req, res) { 
 				'time' : datetimeResult
 			}
 	}
-
-
 
 	res.render('message', data);
  };
