@@ -32,7 +32,7 @@
 		</script>-->
 
 		<div id="body">
-			<h2 class="body_header_text">Send a Remindly to {{recipients.0.recipient}}, {{recipients.1.recipient}}, {{recipients.2.recipient}}, {{recipients.3.recipient}} at {{time}}!</h2>
+			<!-- <h2 class="body_header_text">Send a Remindly to {{recipients.0.recipient}}, {{recipients.1.recipient}}, {{recipients.2.recipient}}, {{recipients.3.recipient}} at {{time}}!</h2> -->
 
 			<form id="send_message_form" role="form" method="post" action="/message">
 				<!-- Hidden form data to pass: user phone number, name, and recipients  -->
@@ -98,7 +98,7 @@
 				</div>
 
 				<div class="nav_footer_btn_buffer"></div>
-
+				<button type="button" id="headerinfo" onclick="displayHeaderInfo()">
 			</div>
 	</div>
 
