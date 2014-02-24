@@ -546,6 +546,21 @@ body {
 		text-align: center;
 	}
 
+	.body_normal_text {
+		font-size: 1.0em;
+		font-family: "helvetica neue";
+		font-weight: 200;
+		opacity: .7;
+		text-align: center;
+	}
+
+	.body_small_text {
+		font-size: 0.7em;
+		font-family: "helvetica neue";
+		font-weight: 200;
+		opacity: .7;
+	}
+
 	/* FOOTER STYLING */
 
 /*	.clear_footer {

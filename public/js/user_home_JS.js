@@ -23,7 +23,7 @@ function onReceiveRemindlys(result) {
 	var userName = $.cookie("name");
 
 	$("#body").prepend($("<h2 class='body_header_text'>Hi, " + userName + "!</h2>"));
-	$("<p id='numpending'>You have <b>" + result.length + "</b> pending remindly(s)</p>").insertAfter('.body_header_text')
+	$("<h2 id='numpending' class='body_normal_text'>You have <b>" + result.length + "</b> pending Remindly(s).</h2>").insertAfter('.body_header_text')
 
 	for(var i in result) {
 		 var message = result[i];
@@ -46,8 +46,9 @@ function onReceiveRemindlys(result) {
 		 // "<table id='pending_remindly_table'><tr><td>" + extractedmsg+ "</td></tr></table><br>").insertAfter('#numpending')
 
 		// style 4:
-		$("<b>Remindly #" + msgnum + "</b> <p id='msginfo'>To: " + message['recipients'] + "</p>" +
-		 "<table id='pending_remindly_table'><tr><td>" + extractedmsg+ "</tr><tr><td><i>To be sent on " + datetime[0] + " at " + datetime[1] + "</i></td></tr></table><hr>").insertAfter('#numpending');
+		$("<p id='msginfo'>To: " + message['recipients']
+			+ "</p>"+ "<table id='pending_remindly_table'><tr><td>" + extractedmsg + "</tr><tr><td><i class='body_small_text'>"
+			+ datetime[0] + " at " + datetime[1] + "</i></td></tr></table><hr>").insertAfter('#numpending');
 	}
 }
 

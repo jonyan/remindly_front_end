@@ -14,15 +14,15 @@
 	<div class="body_container">
 
 		<div class="header_bar">
-			<div><a class="header_back_btn" href="/">Logout</div></a>
+			<div><a class="header_back_btn" href="/">Cancel</div></a>
 			<center><a href="/"><img class="header_logo" src="images/Logo_thicker.png"></a></center>
 		</div>
 		
 		<div id="body">
 			<h2 class="body_header_text">Welcome to Remindly!</h2>
+			<h3 class="body_normal_text">It looks like this is your first time here! What's your first name?</h3>
 			<form id="new_user_form" name="new_user_form" action="/user_home" method="get" >
 				<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
-				&nbsp;&nbsp;<label id="new_user_field_label" for="user_name">Input name:</label>
 				<center><input id="user_name" type="text" name="user_name"></center>
 				<td><input type="submit" id="submitBtn" value="Submit"></td>
 			</form>
@@ -30,7 +30,7 @@
 
 			<div class="nav_footer">
 				<div class="nav_footer_btn_container">
-					<a class="nav_footer_link" onclick="createNewUser()"><div class="nav_footer_button">Send Remindly&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" onclick="createNewUser()"><div class="nav_footer_button">Get Started &nbsp;&gt;</div></a>
 				</div>
 			</div>
 
@@ -40,7 +40,7 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
-
+	<script src="js/jquery.cookie.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/new_user_JS.js"></script>
 

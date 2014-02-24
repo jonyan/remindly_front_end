@@ -13,7 +13,7 @@ function verifyLogin() {
 		console.log("empty field");
 		alert("You must input your phone number to log in.");
 	}
-	else if (phone_number.length > 10 || nondigits.test(phone_number)) {
+	else if (phone_number.length != 10 || nondigits.test(phone_number)) {
 		console.log("too long");
 		alert("Please enter a valid 10 digit phone number.");
 	}
