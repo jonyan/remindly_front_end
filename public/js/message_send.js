@@ -30,7 +30,6 @@ function sendMessageData() {
 
 	send_remindly($.cookie("user_phone"), recipients, time, message);
 }
-
 function send_remindly(user_phone, recipients, time, message) { 
 	$.post("http://www.aerodroid.com/remindly/send_remindly.php",
 		{

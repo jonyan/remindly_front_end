@@ -1,5 +1,5 @@
 	
-exports.setWhen = function(req, res) {  
+exports.setWhen = function(req, res) { 
 	var CHAR_LEN_OF_MONTH = 3;
 	var datetime = req.query.datetime;
 	// var datetime = "Thursday, Feb 20, 2014 @ 2:30 AM";
