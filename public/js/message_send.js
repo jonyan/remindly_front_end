@@ -1,9 +1,11 @@
-
 $("#headerinfo").click();
 
-	var user_phone = $('#user_phone').val();
-	var user_name = $('#user_name').val();
-
+$(function() {
+	if(!isLoggedIn()) {
+		console.log("Not logged in, redirecting to home page");
+		window.location.href = "/?message=error2";
+	}
+});
 
 function displayHeaderInfo() {
 	console.log("click worked");
