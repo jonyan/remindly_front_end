@@ -29,7 +29,7 @@ function buttonFill(e) {
 		e.preventDefault();
 		$(this).css({
 			transition: 'background-color .1s ease-in-out',
-			"background-color": "rgb(52, 52, 52)"
+			"background-color": "white"
 		});
 }
 

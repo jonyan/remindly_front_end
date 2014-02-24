@@ -1,7 +1,7 @@
 function createNewUser() {
 	console.log("create new user connected");
 	var user_phone = $('#user_phone').val();
-	var name = $('#name_field').val();
+	var name = $('#user_name').val();
 	console.log(user_phone, name);
 	create_user(user_phone, name);
 }

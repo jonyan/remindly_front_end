@@ -4,8 +4,6 @@ exports.setWhen = function(req, res) { 
 	console.log(req.query.user_phone);
 	console.log(req.query.user_name);
 
-
-
 	var CHAR_LEN_OF_MONTH = 3;
 	var datetime = req.query.datetime;
 	// var datetime = "Thursday, Feb 20, 2014 @ 2:30 AM";

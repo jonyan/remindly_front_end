@@ -1,7 +1,7 @@
 /* LOGIN PAGE */
 
 function verifyLogin() {
-	var phone_number = $("#login_field").val();
+	var phone_number = $("#user_phone").val();
 	check_user(phone_number);
 }
 
@@ -16,7 +16,7 @@ function check_user(phone_number) {
 
 function onReceiveVerification(result) {
 	console.log("Success: " + result["success"] + " Name: " + result["name"]);
-	var phone_number = $('#login_field').val();
+	var phone_number = $('#user_phone').val();
 	if (result["success"] == 1) { // if user exists
 		window.location.href = '/user_home?user_phone=' + phone_number + '&user_name=' + result["name"];
 	} else if(result["success"] == 0) {

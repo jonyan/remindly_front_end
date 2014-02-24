@@ -16,25 +16,26 @@
 	<div class="body_container">
 		<div class="header_bar">
 			<div><a class="header_back_btn" href="/user_home">Cancel</div></a>
-			<center><a href="/"><img class="header_logo" src="images/Logo.png"></a></center>
+			<center><a href="/"><img class="header_logo" src="images/Logo_thicker.png"></a></center>
 		</div>
 
-		
-<!--
-		<button type="button" id="get_pending_remindlys" onclick="displayHeaderInfo()">
-			<script type="text/javascript">
-			var button = document.getElementById("get_pending_remindlys");
-			button.click();
-
-			function displayHeaderInfo() {
-				console.log("clicked");
-			}
-		</script>-->
 
 		<div id="body">
 			<h2 class="body_header_text">Send a Remindly to {{recipients.0.recipient}}, {{recipients.1.recipient}}, {{recipients.2.recipient}}, {{recipients.3.recipient}} at {{time}}!</h2>
 
 			<form id="send_message_form" role="form" method="post" action="/message">
+				
+
+				<div id="message_container">
+
+					<h4 id="message_label">Message:</h3>
+					<div id="message_field_container">
+						<center><textarea id="message_textbox" maxlength="160" placeholder="Max 160 chars"></textarea></center>
+					</div>
+
+				</div>
+
+
 				<!-- Hidden form data to pass: user phone number, name, and recipients  -->
 				<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
 				<input id="user_name" type="hidden" value={{user_name}} name="user_name">
@@ -60,15 +61,6 @@
 
 				<!-- End of hidden form -->
 
-				<div id="message_container">
-
-					<h4 id="message_label">Message:</h3>
-					<div id="message_field_container">
-						<center><textarea id="message_textbox" maxlength="160" placeholder="Max 160 chars"></textarea></center>
-					</div>
-
-				</div>
-
 			</form>
 <!-- 
 			<div id="message_container">
@@ -92,7 +84,7 @@
 
 				<div class="nav_footer_btn_container">
 
-					<a class="nav_footer_link" onclick="sendMessageData()"><div class="nav_footer_button_option next" style="height: 50px;">Add to Pending Remindlys&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" onclick="sendMessageData()"><div class="nav_footer_button_option next">Submit&nbsp;&gt;</div></a>
 					<a class="nav_footer_link" href="/when"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a>
 
 				</div>

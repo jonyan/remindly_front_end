@@ -1,32 +1,7 @@
 
 
 function displayHeaderInfo() {
-console.log("click worked");
-	// var recipient1 = $('#recipient1').val();
-	// var recipient2 = $('#recipient2').val();
-	// var recipient3 = $('#recipient3').val();
-	// var recipient4 = $('#recipient4').val();
-	// var time = $('#time').val();
-
-	// var recipients = "";
-
-	// if (recipient1 == "self") {
-	// 	recipients += user_phone;
-	// } else if(recipient1 != "name=\"recipient1\"") {
-	// 	recipients += recipient1;
-	// }
-
-	// if (recipient2 != "name=\"recipient2\"") {
-	// 	recipients += "," + recipient2;
-	// }
-
-	// if (recipient3 != "name=\"recipient3\"") {
-	// 	recipients += "," + recipient3;
-	// }
-
-	// if (recipient4 != "name=\"recipient4\"") {
-	// 	recipients += "," + recipient4;
-	// }
+	console.log("click worked");
 }
 	
 
@@ -73,10 +48,7 @@ function sendMessageData() {
 	// 	". time: " + time + ". message: " + message);
 
 	send_remindly(user_phone, recipients, time, message);
-
-
 }
-
 
 
 function send_remindly(user_phone, recipients, time, message) { 
