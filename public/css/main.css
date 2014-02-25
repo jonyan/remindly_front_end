@@ -275,6 +275,14 @@ body {
 
 	/* END NEW PAGE STYLING*/
 
+	/* USER_HOME PAGE STYLING*/
+
+	#numpending {
+		font-size: 1em;
+		text-align: center;
+		font-weight: lighter;
+	}
+
 	/* WHO PAGE STYLING */
 
 	#contacts_container {
