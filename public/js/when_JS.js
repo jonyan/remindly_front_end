@@ -18,6 +18,6 @@ function submitWhenData() {
 		alert("Please enter the date and time this Remindly should be sent at.");
 	} else {
 		$.cookie("temp_datetime", $("#datetime").val());
-		$('#submitBtn').click();
+		$('#set_datetime_form').submit();
 	}
 }

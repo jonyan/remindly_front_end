@@ -31,11 +31,15 @@
 				<center>
 						<table>
 							<tr>
-								<td class="contact_row"><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Me</label></div></td>
+								<td class="contact_row" ><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Me</label></div></td>
 							</tr>
 							
 							<tr id="recipient_row1">
-								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" onclick="addTextField()"placeholder="Add more phone #s or names..." name="recipient1"></td>
+								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" placeholder="Input phone number" name="recipient1"></td>
+							</tr>
+
+							<tr id="add_button_row">
+								<td><div id="plus_row_button" onclick="addTextField()"><div id="plus_button_text">+</div></div></td>
 							</tr>
 
 							<tr>

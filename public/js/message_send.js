@@ -15,16 +15,13 @@ function messageBackAction() {
 }
 
 function displayHeaderInfo() {
-	console.log("click worked");
 	var time = $('#time').val();
 	var datetime = time.split("_");
-	console.log(time);
 	var recipient1 = $('#recipient1').val();
 	var recipient2 = $('#recipient2').val();
 	var recipient3 = $('#recipient3').val();
 	var recipient4 = $('#recipient4').val();
 	
-	console.log("recipients: " + recipient1 + recipient2 + recipient3 + recipient4);
 	var recipients = "";
 	var user_phone = $('#user_phone').val();
 	if (recipient1 == "self") {
@@ -45,8 +42,6 @@ function displayHeaderInfo() {
 		recipients += ", " + recipient4;
 	}
 
-	console.log("datetime array: " + datetime);
-	console.log("to: " + recipients);
 	$("<h2 class='body_header_text'>Send a Remindly to " + recipients + " on " + datetime[0] + " at " + datetime[1] + "!</h2>").insertBefore("#message_container");
 }
 
