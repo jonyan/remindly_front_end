@@ -7,9 +7,10 @@ function createNewUser() {
 		return;
 	}
 
-	console.log(user_phone, name);
 	create_user(user_phone, name);
 }
+
+
 
 function create_user(user_phone, name) {
 	$.post("http://www.aerodroid.com/remindly/add_user.php",
@@ -24,5 +25,6 @@ function create_user(user_phone, name) {
 function onFinish(result) {
 	$.cookie("user_phone", $('#user_phone').val());
 	$.cookie("name", $('#user_name').val());
-	$('#submitBtn').click();
+	window.location.href = '/user_home';
+	
 }

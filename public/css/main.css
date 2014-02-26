@@ -313,6 +313,29 @@ body {
 	  padding-right:10px; 
 	} 
 
+	#plus_row_button {
+		text-align: center;
+	  border: 1px solid rgba(122, 205, 75, 1);
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.6em; 
+	  width: 90%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(122, 205, 75, 1);
+		overflow: auto;
+
+	}
+
+	#plus_button_text {
+		color: white;
+		margin-top: -.17em;
+		font-size: 1.5em;
+	}
+
+
 	input.textbox::-webkit-input-placeholder {font-style: italic;}
 	input.textbox::-moz-placeholder { font-style: italic;}
 	input.textbox:-ms-input-placeholder { center; font-style: italic;}
@@ -390,6 +413,7 @@ body {
 		-ms-user-select: none;
 		user-select: none;
 	}
+
 
 	#submitBtn {
 		visibility: hidden;
@@ -761,6 +785,28 @@ body {
 	  padding-right:10px; 
 	} 
 
+	#plus_row_button {
+		text-align: center;
+	  border: 1px solid rgba(122, 205, 75, 1);
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.6em; 
+	  width: 90%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(122, 205, 75, 1);
+		overflow: auto;
+
+	}
+
+	#plus_button_text {
+		color: white;
+		margin-top: -.17em;
+		font-size: 1.5em;
+	}
+
 	input.textbox::-webkit-input-placeholder {font-style: italic;}
 	input.textbox::-moz-placeholder { font-style: italic;}
 	input.textbox:-ms-input-placeholder { center; font-style: italic;}
@@ -838,6 +884,7 @@ body {
 		-ms-user-select: none;
 		user-select: none;
 	}
+
 
 	#submitBtn {
 		visibility: hidden;

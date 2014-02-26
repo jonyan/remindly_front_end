@@ -5,7 +5,7 @@ function submitWhoData() {
 	if (isInvalid()) {
 		alert("Please enter a valid 10 digit phone number.");
 	} else {
-		$('#submitBtn').click();
+		$('#add_contacts_form').submit();
 	}
 }
 
@@ -53,6 +53,57 @@ function isEmpty() {
 		isEmpty = false;
 	}
 	return isEmpty
+}
+
+
+
+
+/* WHO PAGE */
+
+/* If user inputs name/number in the text field on 
+ * who page, this code will create another input field
+ * dynamically; up to 4 text fields if the 'me' checkbox
+ * is checked, up to 5 text fields if the 'me' checkbox
+ * is unchecked
+ */
+
+var numTextFields = 3;
+var recipientNumber = 2;
+
+$('#me').change(function() {
+	if ($('#me').is(':checked'))  {
+		numTextFields--;
+	} else {
+		numTextFields++;
+	}
+	if ((!$('#me').is(':checked')) && numTextFields <= 1) {
+		console.log("uncheck and add field");
+		addTextField();
+	}
+	if ($('#me').is(':checked') && numTextFields < 0) {
+		$("#recipient5").remove();
+		var add_button_row = $("#add_button_row");
+		add_button_row.remove();
+		numTextFields++;
+		recipientNumber--;
+		add_button_row.insertAfter('#recipient_row' + (recipientNumber - 1));
+	}
+});
+
+
+function addTextField() {
+	if (numTextFields > 0) {
+		var newTextField = "<tr id='recipient_row" + recipientNumber
+			+ "'><td class='contact_row'><input class='recipient_textbox' id='recipient"
+			+ recipientNumber + "' type='tel' placeholder='Input phone number' name='recipient"
+			+ recipientNumber +"'></td></tr>";
+
+		$(newTextField).insertAfter('#recipient_row' + (recipientNumber - 1));
+		numTextFields--;
+		recipientNumber++;
+	}
+	console.log(numTextFields);
+
 }
 
 $(function() {
