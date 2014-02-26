@@ -7,13 +7,13 @@ var datepicker = $('#date').pickadate({
 
 var timepicker = $('#time').pickatime({
         container: '#outlet',
-        onRender: function() {
-            $('<button>back to date</button>').
-                on('click', function() {
-                    timepicker.close()
-                    datepicker.open()
-                }).prependTo( this.$root.find('.picker__box') )
-        },
+        // onRender: function() {
+        //     $('<button>back to date</button>').
+        //         on('click', function() {
+        //             timepicker.close()
+        //             datepicker.open()
+        //         }).prependTo( this.$root.find('.picker__box') )
+        // },
         onSet: function(item) {
             if ( 'select' in item ) setTimeout( function() {
                 $datetime.
