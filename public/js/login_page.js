@@ -6,6 +6,7 @@ $(function() {
 });
 
 function verifyLogin() {
+	console.log("ENTERED!");
 	var phone_number = $("#user_phone").val();
 	console.log(phone_number);
 	var nondigits = /\D/g;
@@ -14,7 +15,6 @@ function verifyLogin() {
 		alert("You must input your phone number to log in.");
 	}
 	else if (phone_number.length != 10 || nondigits.test(phone_number)) {
-		console.log("too long");
 		alert("Please enter a valid 10 digit phone number.");
 	}
 	else { 

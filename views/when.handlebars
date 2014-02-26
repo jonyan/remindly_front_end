@@ -23,19 +23,13 @@
 		</div>
 
 		<div id="body">
-			<h2 class="body_header_text">Select When to Send Remindly</h2>
-
-
+			<h2 class="body_header_text">Send this Remindly at...</h2>
 			
 			<!-- 	### Extend [pickadate v3](http://http://amsul.github.io/pickadate.js) with [date.js](http://www.datejs.com/) to enable keyboard typing and the parsing of any date format.
 
 			Type or pick a date: -->
 
 			<form id="set_datetime_form" role="form" method="get" action="/message">
-
-				<!-- Hidden form data to pass: user phone number, name, and recipients  -->
-				<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
-				<input id="user_name" type="hidden" value={{user_name}} name="user_name">
 				
 				<table id ="hidden_form_data">
 					<tr>
@@ -55,7 +49,10 @@
 				<br>
 
 				<div id="wrap">
-					<center><input type="text" name="datetime" id="datetime"/></center>
+					<center>
+						<label class="header_normal_text" for="datetime">Tap to select date/time</label>
+						<input type="text" name="datetime" id="datetime"/>
+					</center>
 					<div id="hidden">
 						<center>
 							<input type="text" id="date"/>

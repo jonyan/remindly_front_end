@@ -8,15 +8,15 @@ exports.view = function(req, res){
 	console.log(req.query.message);
 	if(req.query.message == "error1") {
 		var message = {
-			"message" : "Invalid phone number, please try again."
+			"message" : "Sorry, invalid phone number."
 		}
 	} if(req.query.message == "error2") {
 		var message = {
-			"message" : "You've been logged out, please log in again."
+			"message" : "Sorry, you've been logged out."
 		}
 	} else {
 		var message = {
-			"message" : "Log in with cell number to send a delayed text reminder!"
+			"message" : "Send delayed SMS reminders!"
 		}
 	}
 	console.log(message);

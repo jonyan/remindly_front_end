@@ -103,12 +103,20 @@ body {
 	/* BODY STYLING */
 
 	.body_header_text {
-		font-size: 1.1em;
+		font-size: 0.7em;
 		font-family: "helvetica neue";
-		font-weight: 200;
+		font-weight: 100;
 		text-align: center;
 		margin-bottom: .4em;
 
+	}
+
+	.body_normal_text {
+		font-size: 1.0em;
+		font-family: "helvetica neue";
+		font-weight: 200;
+		opacity: .7;
+		text-align: center;
 	}
 
 	/* FOOTER STYLING */
@@ -224,11 +232,6 @@ body {
     -webkit-box-shadow: 0px 0px 8px #7bc1f7;
 	}
 
-	#next_button_container {
-		float: right;
-		margin-top: .3em;
-		margin-right: .3em
-	}
 	#next_button {
 		width: 1.2em;
 		height auto;
@@ -548,7 +551,7 @@ body {
 	/* BODY STYLING */
 
 	.body_header_text {
-		font-size: 1.5em;
+		font-size: 1.0em;
 		font-family: "helvetica neue";
 		font-weight: 200;
 		opacity: .7;
@@ -556,7 +559,7 @@ body {
 	}
 
 	.body_normal_text {
-		font-size: 1.0em;
+		font-size: 0.8em;
 		font-family: "helvetica neue";
 		font-weight: 200;
 		opacity: .7;
@@ -686,10 +689,6 @@ body {
     -webkit-box-shadow: 0px 0px 8px #7bc1f7;
 	}
 
-	#next_button_container {
-		float: right;
-		/*margin-left: .2em;*/
-	}
 	#next_button {
 		width: 1.2em;
 		height auto;
@@ -922,28 +921,3 @@ body {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
