@@ -1,6 +1,8 @@
 jQuery(function($){
    $("#date").mask("99/99/9999");
    $("#user_phone").mask("(999)999-9999");
+   $("#settings_user_phone_field").mask("(999)999-9999");
+
    // $(".recipient_textbox").mask("(999)999-9999");
    $("#tin").mask("99-9999999");
    $("#ssn").mask("999-99-9999");

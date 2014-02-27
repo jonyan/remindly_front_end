@@ -15,7 +15,8 @@
 	<div class="body_container">
 		<div class="header_bar">
 			<div><a class="header_back_btn" onclick="goToHomeAction()">Cancel</div></a>
-			<center><a href="/"><img class="header_logo" src="images/Logo_thicker.png" ></a></center>
+			<a href="/settings"><div class="settings_button"><img class="settings_icon_img" src="images/settings_icon.png"></div></a>
+			<center><a onclick="goToHomeAction()"><img class="header_logo" src="images/Logo_thicker.png" ></a></center>
 		</div>
 		
 		<div id="body">
@@ -23,10 +24,6 @@
 			
 			<form id="add_contacts_form" role="form" method="get" action="/when">
 
-			<!-- Hidden form data to pass: user name and phone number -->
-			<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
-			<input id="user_name" type="hidden" value={{user_name}} name="user_name">
-			<!-- End of hidden form -->
 			<div id="contacts_container">
 				<center>
 						<table>

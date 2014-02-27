@@ -23,7 +23,8 @@ function onReceiveRemindlys(result) {
 	var userName = $.cookie("name");
 
 	$("#body").prepend($("<h2 class='body_header_text'>Hi, " + userName + "!</h2>"));
-	$("<h2 id='numpending' class='body_normal_text'>You have <b>" + result.length + "</b> pending Remindly(s).</h2>").insertAfter('.body_header_text');
+	$("<h3 class='sub_body_header_text'>Your number: " + $.cookie("user_phone") + "</h3>").insertAfter('.body_header_text');
+	$("<h2 id='numpending' class='body_normal_text'>You have <b>" + result.length + "</b> pending Remindly(s).</h2>").insertAfter('.sub_body_header_text');
 
 	for(var i in result) {
 		 var message = result[i];

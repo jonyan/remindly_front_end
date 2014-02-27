@@ -18,25 +18,28 @@
 			<div><a class="header_back_btn" href="#" onclick="logout()">Logout</div></a>
 			<a href="/settings"><div class="settings_button"><img class="settings_icon_img" src="images/settings_icon.png"></div></a>
 			<center><a onclick="goToHomeAction()"><img class="header_logo" src="images/Logo_thicker.png"></a></center>
-			<!-- <a href="#"><div class="settings_button"> -->
-			<!-- </a></div> -->
 		</div>
 		
 		<div id="body">
+			<h2 class="body_header_text">Settings</h2>
+			<br>
+			<form id="edit_user_details" role="form" method="get" action="/settings">
+				<div id="settings_form_container">
+					<label class="settings_field_label" for="user_phone">Edit Phone Number:</label><input id="settings_user_phone_field"  type="tel" name="user_phone"><br><br>
+					<label class="settings_field_label" for="user_name">Edit Name:</label><input id="settings_user_name_field" type="text" name="user_name">
+				</div>
+			</form>
 
-			<div class="hidden_button_container"><button type="button" id="get_pending_remindlys" onclick="getPendingRemindlys()"></div>
-
+			
 			<div class="clear_footer"></div>
 
 			<div class="nav_footer">
 				<div class="nav_footer_btn_container">
-					<a class="nav_footer_link" onclick="renderWhoPage()"><div class="nav_footer_button">Create a new Remindly&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" onclick="updateUserData()"><div class="nav_footer_button_option next">Update</div></a>
+					<a class="nav_footer_link" href="/user_home"><div class="nav_footer_button_option back">Home</div></a>
 				</div>
 			</div>
 
-			<!-- submit button to get clicked/triggered in user_home_JS to make
-			get request to get pending remindly data and display on page -->
-			<button type="button" id="get_pending_remindlys" onclick="getPendingRemindlys()">
 
 		</div>
 	</div>
@@ -44,7 +47,8 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery.cookie.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/user_home_JS.js"></script>
+	<script src="js/settings_JS.js"></script>
+			<script src="js/maskedinput.js" type="text/javascript"></script>
 
 </body>
 </html>
