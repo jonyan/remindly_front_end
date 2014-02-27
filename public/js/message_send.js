@@ -58,8 +58,11 @@ function sendMessageData() {
 
 	var recipients = "";
 
+	var user_phone_number = $.cookie("user_phone");
+	user_phone_number = user_phone_number.substr(1, 3) + user_phone_number.substr(5, 3) + user_phone_number.substr(9, 4);
+
 	if (recipient1 == "self") {
-		recipients += $.cookie("user_phone");
+		recipients += phone_number;
 	} else if(recipient1 != "name=\"recipient1\"") {
 		recipients += recipient1;
 	}
@@ -76,7 +79,7 @@ function sendMessageData() {
 		recipients += "," + recipient4;
 	}
 
-	send_remindly($.cookie("user_phone"), recipients, time, message);
+	send_remindly(user_phone_number, recipients, time, message);
 }
 
 function send_remindly(user_phone, recipients, time, message) { 
