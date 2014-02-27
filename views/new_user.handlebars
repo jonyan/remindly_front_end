@@ -21,6 +21,7 @@
 		<div id="body">
 			<h2 class="body_header_text">Welcome to Remindly!</h2>
 			<h3 class="body_normal_text">It looks like this is your first time here! What's your first name?</h3>
+			<form onsubmit="return createNewUser()">
 				<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
 				<center><input id="user_name" type="text" name="user_name"></center>
 			</form>

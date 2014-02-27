@@ -4,10 +4,11 @@ function createNewUser() {
 
 	if(!$('#user_name').val()) {
 		alert("We need your first name to send Remindly's, please try again.");
-		return;
+		return false;
 	}
 
 	create_user(user_phone, name);
+	return false;
 }
 
 

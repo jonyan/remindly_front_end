@@ -20,7 +20,7 @@
 
 
 		<div id="login_text_field_container">
-			<form name="login_form" action="/user_home" method="get" >
+			<form name="login_form" onsubmit="return verifyLogin()" method="get">
 				
 				<center><p class="body_normal_text">Enter your phone number</p></center>
 				<input type="tel" id="user_phone" name="user_phone" placeholder="( _ _ _ ) _ _ _ - _ _ _ _">

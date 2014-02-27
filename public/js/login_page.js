@@ -20,6 +20,7 @@ function verifyLogin() {
 	else { 
 		check_user(phone_number);
 	}
+	return false;
 }
 
 // function isNumber(phone_number) {
