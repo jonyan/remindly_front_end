@@ -23,7 +23,6 @@ function displayHeaderInfo() {
 	var recipient4 = $('#recipient4').val();
 	
 	var recipients = "";
-	var user_phone = $('#user_phone').val();
 	if (recipient1 == "self") {
 		recipients += "Myself";
 	} else if(recipient1 != "name=\"recipient1\"") {
@@ -60,9 +59,9 @@ function sendMessageData() {
 
 	var user_phone_number = $.cookie("user_phone");
 	user_phone_number = user_phone_number.substr(1, 3) + user_phone_number.substr(5, 3) + user_phone_number.substr(9, 4);
-
+	console.log(user_phone_number);
 	if (recipient1 == "self") {
-		recipients += phone_number;
+		recipients += user_phone_number;
 	} else if(recipient1 != "name=\"recipient1\"") {
 		recipients += recipient1;
 	}

@@ -1,5 +1,6 @@
 function createNewUser() {
 	var user_phone = $('#user_phone').val();
+	user_phone = user_phone.substr(1, 3) + user_phone.substr(5, 3) + user_phone.substr(9, 4);
 	var name = $('#user_name').val();
 
 	if(!$('#user_name').val()) {

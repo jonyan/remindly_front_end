@@ -5,7 +5,9 @@ function getPendingRemindlys() {
 		console.log("Not logged in, redirecting to home page");
 		window.location.href = "/?message=error2";
 	} else {
-		get_users_remindlys($.cookie("user_phone"));
+		var user_phone = $.cookie("user_phone");
+		user_phone = user_phone.substr(1, 3) + user_phone.substr(5, 3) + user_phone.substr(9, 4);
+		get_users_remindlys(user_phone);
 	}
 }
 
