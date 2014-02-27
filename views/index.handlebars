@@ -16,19 +16,17 @@
 	<div id="body">
 		<br><br>
 		<center><a href="/"><img id="home_page_logo" src="images/homepage_logo.png"></a></center>
-		<center><h4 class="body_header_text">{{message}}</h4></center>
+		<center><h4 style="margin-bottom:-.6em;margin-top:.7em;" class="body_header_text">{{message}}</h4></center>
 
 
 		<div id="login_text_field_container">
 			<form name="login_form" onsubmit="return verifyLogin()" method="get">
 				
-				<center><p class="body_normal_text">Enter your phone number</p></center>
+				<center><p class="body_normal_text" style="margin-bottom:.5em;">Enter your phone number</p></center>
 				<input type="tel" id="user_phone" name="user_phone" placeholder="(___)___-____">
 					<a onclick="verifyLogin()"><img id="next_button" src="images/next.png">
 				</input>
 
-			<!-- <div id="next_button_container"><input type="image" onclick="verifyLogin()" style="width:35px; height: auto;" src="images/next.png"></div> -->
-			<!-- <input type="submit" id="login_submitBtn" value="Submit"> -->
 			</form>
 		</div> 
 

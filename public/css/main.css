@@ -88,7 +88,7 @@ body {
 		text-decoration: none;
 		color: white;
 		font-size: .8em;
-		font-weight: 200;
+		font-weight: 300;
 		margin-top: .7em;
 		margin-left: .5em;
 	}
@@ -121,7 +121,7 @@ body {
 	.body_header_text {
 		font-size: 1em;
 		font-family: "helvetica neue";
-		font-weight: 200;
+		font-weight: 300;
 		text-align: center;
 		margin-bottom: .4em;
 
@@ -271,7 +271,7 @@ body {
 		height auto;
 	}
 	#delayed_sms_reminder_img_container {
-		margin-top: 2em;
+		margin-top: 1em;
 	}
 
 	#delayed_sms_reminder_img {
@@ -351,7 +351,7 @@ body {
     -webkit-box-shadow: 0px 0px 8px #7bc1f7;
 	}
 	.settings_field_label {
-		font-size: 1em;
+		font-size: .8em;
 		margin-right: 2%;
 	}
 
@@ -384,9 +384,9 @@ body {
 	/* USER_HOME PAGE STYLING*/
 
 	#numpending {
-		font-size: 1em;
+		font-size: .8em;
 		text-align: center;
-		font-weight: lighter;
+		font-weight: 200;
 	}
 
 	/* WHO PAGE STYLING */
@@ -580,6 +580,9 @@ body {
 
 /* MESSAGE PAGE STYLING */
 
+#message_container {
+	margin-top:-.7em;
+}
 
 #message_textbox { 
 	padding-left: .5em;
@@ -591,7 +594,7 @@ body {
   -moz-border-radius: 10px; 
   border-radius: 10px; 
   outline:0; 
-  height:7.5em; 
+  height:6.5em; 
   width: 88%; 
 } 
 
@@ -700,11 +703,11 @@ body {
 
 	.sub_body_header_text {
 		opacity: .6;
-		font-size: 0.7em;
+		font-size: 0.6em;
 		font-family: "helvetica neue";
 		font-weight: 200;
 		text-align: center;
-		margin-top: -.8em;
+		margin-top: -1em;
 		margin-bottom: -.4em;
 	}
 
