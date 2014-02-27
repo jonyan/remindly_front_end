@@ -8,6 +8,7 @@ $(function() {
 function verifyLogin() {
 	console.log("ENTERED!");
 	var phone_number = $("#user_phone").val();
+	phone_number = phone_number.substr(1, 3) + phone_number.substr(5, 3) + phone_number.substr(9, 4);
 	console.log(phone_number);
 	var nondigits = /\D/g;
 	if (phone_number == "") {
