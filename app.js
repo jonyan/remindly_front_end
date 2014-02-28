@@ -14,6 +14,7 @@ var settings = require('./routes/settings');
 var verification = require('./routes/verification');
 var user_home = require('./routes/user_home');
 var who = require('./routes/who');
+var who_old = require('./routes/who_old');
 var when = require('./routes/when');
 var message = require('./routes/message');
 
@@ -51,6 +52,7 @@ app.get('/verification', verification.login);
 // app.get('/verification', verification.getMessage);
 app.get('/user_home', user_home.verify);
 app.get('/who', who.view);
+app.get('/who_old', who_old.view);
 app.get('/when', when.addRecipients);
 app.get('/message', message.setWhen);
 
