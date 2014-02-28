@@ -1,0 +1,72 @@
+<!-- WHO (OLD) PAGE - This is the page before we redesigned it -->
+
+<!doctype html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+</head>
+
+<body>
+	<div class="body_container">
+		<div class="header_bar">
+			<div><a class="header_back_btn" onclick="goToHomeAction()">Cancel</div></a>
+			<center><a href="/"><img class="header_logo" src="images/Logo_thicker.png" ></a></center>
+		</div>
+		
+		<div id="body">
+			<h2 class="body_header_text">Send a Remindly to...</h2>
+
+			
+			<form id="add_contacts_form" role="form" method="get" action="/when">
+
+			<!-- Hidden form data to pass: user name and phone number -->
+			<input id="user_phone" type="hidden" value={{user_phone}} name="user_phone">
+			<input id="user_name" type="hidden" value={{user_name}} name="user_name">
+			<!-- End of hidden form -->
+			<div id="contacts_container">
+				<center>
+						<table>
+							<tr>
+								<td class="contact_row"><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Me</label></div></td>
+							</tr>
+							<tr id="recipient1">
+								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" onclick="addTextField()"placeholder="Add more phone #s or names..." name="recipient1"></td>
+							</tr>
+
+							<tr>
+								<td><input type="submit" id="submitBtn" value="Submit"></td>
+							</tr>
+						</table>
+					</form>
+				</center>
+			</div>
+
+			<div class="clear_footer"></div>
+
+			<div class="nav_footer">
+				<div class="nav_footer_btn_container">
+					<a class="nav_footer_link" onclick="submitWhoData()"><div class="nav_footer_button next">When&nbsp;&gt;</div></a>
+					<!-- <a class="nav_footer_link" href="/who"><div class="nav_footer_button_option back">&lt;&nbsp;Back</div></a> -->
+				</div>
+				<div class="nav_footer_btn_buffer"></div>
+
+			</div>
+				
+
+			
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/who_old_JS.js"></script>
+
+</body>
+</html>
+
+
