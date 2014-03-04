@@ -948,8 +948,6 @@ TimePicker.defaults = (function( prefix ) {
 
         // The interval between each time
         interval: 5,
-        min: true,
-        max: undefined,
 
         // Classes
         klass: {
