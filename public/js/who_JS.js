@@ -1,11 +1,27 @@
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+var startTime;
+
+$(document).ready(function() {
+	startTime = new Date().getTime();
+	console.log("Started watching: " + startTime);
+});
+
 function submitWhoData() {
 	if (isEmpty()) {
 		alert("Please select at least one recipient");
-	} 
-	if (isInvalid()) {
+	} else if (isInvalid()) {
 		alert("Please enter a valid 10 digit phone number.");
 	} else {
-		$('#add_contacts_form').submit();
+		var endTime = new Date().getTime();
+		var timeSpent = endTime - startTime;
+	  ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Google CDN');
+	  // _gaq.push(['_trackTiming', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly']);
+	  console.log("Finished timing: " + timeSpent);
+		// $('#add_contacts_form').submit();
 	}
 }
 
