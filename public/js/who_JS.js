@@ -2,6 +2,8 @@
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	ga('send', 'timing', 'timeSpent', 'newWhoPage', 50, 'Remindly', {'page': '/who'});
 
 var startTime;
 
@@ -18,10 +20,10 @@ function submitWhoData() {
 	} else {
 		var endTime = new Date().getTime();
 		var timeSpent = endTime - startTime;
-	  ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Google CDN');
+	  ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
 	  // _gaq.push(['_trackTiming', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly']);
 	  console.log("Finished timing: " + timeSpent);
-		// $('#add_contacts_form').submit();
+		$('#add_contacts_form').submit();
 	}
 }
 
