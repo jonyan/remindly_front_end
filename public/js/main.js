@@ -49,12 +49,13 @@ function goToHomeAction() {
 }
 
 function isLoggedIn() {
-	return $.cookie("user_phone") && $.cookie("name");
+	return $.cookie("user_phone") && $.cookie("name") && $.cookie("user_id");
 }
 
 function logout() {
 	$.removeCookie("user_phone");
 	$.removeCookie("name");
+	$.removeCookie("user_id");
 	$.removeCookie("temp_datetime");
 	$.removeCookie("temp_message");
 	window.location.href = "/";

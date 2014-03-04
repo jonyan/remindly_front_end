@@ -45,9 +45,11 @@ function check_user(phone_number) {
 function onReceiveVerification(result) {
 	var phone_number = $('#user_phone').val();
 	var name = result["name"];
+	var user_id = result["user_id"];
 	if (result["success"] == 1) { // if user exists
 		$.cookie("user_phone", phone_number);
 		$.cookie("name", name);
+		$.cookie("user_id", user_id);
 		goToHomeAction();
 	} else if(result["success"] == 0) {
 		window.location.href = '/new_user?user_phone=' + phone_number;
