@@ -1,4 +1,6 @@
-
+.hidden {
+	visibility: hidden;
+}
 
 #hidden_form_data {
 	position: absolute;
@@ -155,6 +157,18 @@ body {
 
 
 	.nav_footer_button {
+		margin-top: 8px;
+		margin-bottom: 8px;
+		margin-right: auto;
+		margin-left: auto;
+		border:.11em solid white;
+		padding:5px; 
+		width: 85%;
+		height: 1.3em;
+		border-radius:10px;
+	}
+
+	.nav_footer_button1 {
 		margin-top: 8px;
 		margin-bottom: 8px;
 		margin-right: auto;
@@ -957,6 +971,18 @@ body {
 
 	}
 
+	.nav_footer_button1 {
+		margin-right: auto;
+		margin-left: auto;
+		border:.11em solid white;
+		padding:5px; 
+		width: 85%;
+		height: 1.3em;
+		border-radius:10px;
+		margin-top: .9em;
+		margin-bottom: .75em;
+
+	}
 	
 
 	.nav_footer_button_option {

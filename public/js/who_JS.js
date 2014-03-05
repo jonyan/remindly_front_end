@@ -4,7 +4,7 @@
 // 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	
 // 	ga('send', 'timing', 'timeSpent', 'newWhoPage', 50, 'Remindly', {'page': '/who'});
-
+var contactsJson;
 var startTime;
 
 $(document).ready(function() {
@@ -31,40 +31,75 @@ function submitWhoData() {
 	if (isEmpty()) {
 		alert("Please select at least one recipient");
 	} else if (isInvalid()) {
-		alert("Please enter a valid 10 digit phone number.");
+		alert("Please enter a valid name or 10 digit phone number.");
 	} else {
 		var endTime = new Date().getTime();
 		var timeSpent = endTime - startTime;
 	  // ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
 	  // _gaq.push(['_trackTiming', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly']);
 	  console.log("Finished timing: " + timeSpent);
-	  submitNewContacts();
-		$('#add_contacts_form').submit();
+	  if (submitNewContacts()) {
+		  fillHiddenFormFields();
+			$('#add_contacts_form').submit();
+		}
 	}
 }
 
-function submitNewContacts() {
-	// console.log("hello");
+function fillHiddenFormFields() {
+	if (!$('#me_input').is(":checked")) {
+		$('#me').prop('checked', false);
+	} else {
+		$('#me').prop('checked', true);
+	}
+
 	for (var row = 1; row <= 5; row++) {
-		if ($("#recipient_name_row" + row).length > 0){
-			if ($("#recipient_name_textbox" + row).val() != "") {
-				var user_id = $.cookie('user_id');
-				var name = $("#recipient_name_textbox" + row).val();
-				var phone = $("#recipient" + row).val();
-				$.post("http://www.aerodroid.com/remindly/add_contact.php",
-						{
-							"user_id" : user_id,
-							"name" : name,
-							"phone" : phone
-						},
-				onFinishSubmit);
+		if ($("#recipient_row" + row).length > 0) {
+			if ($("#recipient_input" + row).val() != "") {
+				var number = getNumber($("#recipient_input" + row).val());
+				console.log(number);
+				$('#add_contacts_form').append("<input type='hidden' id='recipient" + row + "' name='recipient" + row + "' value='" + number + "'>");
 			}
 		}
 	}
 }
 
+function getNumber(value) {
+	for(var i in contactsJson) {
+		var contact = contactsJson[i];
+		if (contact['name'] == value) {
+				return contact['phone'];
+		}
+	}
+}
+
+function submitNewContacts() {
+	for (var row = 1; row <= 5; row++) {
+		if ($("#recipient_name_row" + row).length > 0){
+			if ($("#recipient_name_textbox" + row).val() != "") {
+				if (!isNumber($("#recipient_name_textbox" + row).val())) {
+					alert("Must input number to add contact!");
+					return false;
+				} else {
+					var user_id = $.cookie('user_id');
+					var name = $("#recipient_name_textbox" + row).val();
+					var phone = $("#recipient_input" + row).val();
+					$.post("http://www.aerodroid.com/remindly/add_contact.php",
+							{
+								"user_id" : user_id,
+								"name" : name,
+								"phone" : phone
+							},
+					onFinishSubmit);
+					return true;
+				}
+			}
+		}
+	}
+	return true;
+}
+
 function onFinishSubmit(result) {
-	console.log(result);
+	return true;
 }
 
 function isInvalid() {
@@ -72,34 +107,56 @@ function isInvalid() {
 	var index = 1;
 	var nondigits = /\D/g;
 
-	var value = $('#recipient' + index.toString()).val();
+	var value = $('#recipient_input' + index.toString()).val();
 		while(value != null) {
 			if (value != "") {
-				if (value.length != 10 || nondigits.test(value)) {
-					isInvalid = true;
-					return true;
+				if (!isNumber(value)) {
+					if(!doesNameExist(value)) {
+						isInvalid = true;
+						return true;
+					}
+				} else {
+					if (value.length != 10 || nondigits.test(value)) {
+						isInvalid = true;
+						return true;
+					}
 				}
 			}
 			index++;
-			value = $('#recipient' + index.toString()).val();
+			value = $('#recipient_input' + index.toString()).val();
 		}
 		return isInvalid;
+}
+
+function isNumber(value) {
+	if(isNaN(value)) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function doesNameExist(value) {
+	if ($.inArray(value, availableTags) > -1) {
+		return true;
+	}
+	return false;
 }
 
 
 function isEmpty() {
 	var isEmpty = true;
-	if (!$('#me').is(":checked")) {
+	if (!$('#me_input').is(":checked")) {
 		var index = 1;
 
-		var value = $('#recipient' + index.toString()).val();
+		var value = $('#recipient_input' + index.toString()).val();
 		while(value != null) {
 			if (value != "") {
 				isEmpty == false;
 				return false;
 			}
 			index++;
-			value = $('#recipient' + index.toString()).val();
+			value = $('#recipient_input' + index.toString()).val();
 		}
 	} else {
 		isEmpty = false;
@@ -122,17 +179,17 @@ function isEmpty() {
 var numTextFields = 3;
 var recipientNumber = 2;
 
-$('#me').change(function() {
-	if ($('#me').is(':checked'))  {
+$('#me_input').change(function() {
+	if ($('#me_input').is(':checked'))  {
 		numTextFields--;
 	} else {
 		numTextFields++;
 	}
-	if ((!$('#me').is(':checked')) && numTextFields <= 1) {
+	if ((!$('#me_input').is(':checked')) && numTextFields <= 1) {
 		console.log("uncheck and add field");
 		addTextField();
 	}
-	if ($('#me').is(':checked') && numTextFields < 0) {
+	if ($('#me_input').is(':checked') && numTextFields < 0) {
 		$("#recipient_row5").remove();
 		$("#recipient_name_row5").remove();
 		var add_button_row = $("#add_button_row");
@@ -153,8 +210,8 @@ function addTextField() {
 	// ga("send", "event", "whoNew_plusButton", "click");
 	if (numTextFields > 0) {
 		var newTextField = "<tr id='recipient_row" + recipientNumber
-			+ "'><td class='contact_row'><input onclick='auto_complete()'' class='recipient_textbox' id='recipient"
-			+ recipientNumber + "' type='tel' placeholder='Input name or phone number' name='recipient"
+			+ "'><td class='contact_row'><input onclick='auto_complete()'' class='recipient_textbox' id='recipient_input"
+			+ recipientNumber + "' type='tel' placeholder='Input name or phone number' name='recipient_input"
 			+ recipientNumber +"'><a id='add_name" + recipientNumber + "' class='add_name_btn'><img class='plus_btn' " + 
 			"src='images/add_user_btn.png'></a></td></tr>";
 			var htmlElemToInsertAfter;
@@ -179,21 +236,12 @@ $(function() {
 });
 
 var availableTags = new Array();
-
 function onFinishPost(result) {
-	console.log(result);
+	contactsJson=result;
 	for(var i in result) {
 		var contact = result[i];
 		availableTags[i] = contact['name'];
 	}
-	// for(var i in result) {
-	// 	var contact = result[i];
-	// 	availableTags[i] = contact['name'];
-	// }
-
-
-	// 		console.log("     Name: " + contact['name']);
-	// 	console.log("     Phone: " + contact['phone']);
 
 }
 

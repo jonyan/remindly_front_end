@@ -1,6 +1,7 @@
 
 exports.addRecipients = function(req, res) { 
 	var data;
+	console.log(req.query.recipient1);
 	if(req.query.me) {
 		data = {
 			'recipients' : [
