@@ -5,18 +5,18 @@
 <html>
 <head>
 <!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='82947326-7',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
+<!--// <script>function utmx_section(){}function utmx(){}(function(){var
+// k='82947326-7',d=document,l=d.location,c=d.cookie;
+// if(l.search.indexOf('utm_expid='+k)>0)return;
+// function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+// indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+// length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+// '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+// '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+// '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+// valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+// '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>-->
 <!-- End of Google Analytics Content Experiment code -->
 
 	<meta charset="utf-8">
@@ -47,11 +47,12 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 							</tr>
 							
 							<tr id="recipient_row1">
-								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" placeholder="Input phone number" name="recipient1"></td>
+								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" placeholder="Input phone number" name="recipient1"><a id="add_name1" class="add_name_btn"><img class="plus_btn" src="images/add_user_btn.png"></a></td>
 							</tr>
 
+
 							<tr id="add_button_row">
-								<td><div id="plus_row_button" onclick="addTextField()"><div id="plus_button_text">+</div></div></td>
+								<td><a class="link"><div id="add_recipient_row_button" onclick="addTextField()"><div id="plus_button_text">Add Recipient</div></div></a></td>
 							</tr>
 
 							<tr>
@@ -78,15 +79,15 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	<script src="js/jquery.cookie.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/who_JS.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	<!-- <script>
+	//   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	//   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	//   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	//   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	 ga('create', 'UA-48463521-2', 'remindly.me');
-	  ga('send', 'pageview');
-	</script>
+	//  ga('create', 'UA-48463521-2', 'remindly.me');
+	//   ga('send', 'pageview');
+	</script>-->
 
 </body>
 </html>

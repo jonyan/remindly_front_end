@@ -12,6 +12,15 @@ $(document).ready(function() {
 	console.log("Started watching: " + startTime);
 });
 
+
+$(document).on('click', '.add_name_btn', function() {
+	var id = $(this).closest("tr").attr("id");
+	$("<tr id='recipient_name_row" + id.substr(13) + "'><td class='contact_row'><img class='sub_arrow' src='images/sub_arrow.png'><input class='recipient_name_textbox' id='recipient_name_textbox" + id.substr(13) +"' type='text' placeholder='Input Name to Save in Contacts'></td></tr>").insertAfter("#" + id);
+	$("#add_name" + id.substr(13)).replaceWith("<a id='add_name_faded'> <img class='plus_btn' src='images/add_user_btn_faded.png'></a>");
+
+});
+
+
 function submitWhoData() {
 	if (isEmpty()) {
 		alert("Please select at least one recipient");
@@ -23,9 +32,48 @@ function submitWhoData() {
 	  ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
 	  // _gaq.push(['_trackTiming', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly']);
 	  console.log("Finished timing: " + timeSpent);
+	  submitNewContacts();
 		$('#add_contacts_form').submit();
 	}
 }
+
+function submitNewContacts() {
+	// console.log("hello");
+	for (var row = 1; row <= 5; row++) {
+		if ($("#recipient_name_row" + row).length > 0){
+			if ($("#recipient_name_textbox" + row).val() != "") {
+				var user_id = $.cookie('user_id');
+				var name = $("#recipient_name_textbox" + row).val();
+				var phone = $("#recipient" + row).val();
+				$.post("http://www.aerodroid.com/remindly/add_contact.php",
+						{
+							"user_id" : user_id,
+							"name" : name,
+							"phone" : phone
+						},
+				onFinishPost);
+			}
+		} else {
+			console.log(row + "th row doesn't exist");
+
+		}
+	}
+}
+
+function onFinishPost(result) {
+	console.log(result);
+}
+
+// 	var data = {
+// 			'newContact' : [
+// 				{"user_id" : $.cookie(“user_id”)},
+// 				{"name" : req.query.recipient1},
+// 				{"recipient" : req.query.recipient2},
+// 				{"recipient" : req.query.recipient3},
+// 				{"recipient" : req.query.recipient4}
+// 			]
+// 		}
+// }
 
 // 	var nondigits = /\D/g;
 
@@ -99,25 +147,37 @@ $('#me').change(function() {
 		addTextField();
 	}
 	if ($('#me').is(':checked') && numTextFields < 0) {
-		$("#recipient5").remove();
+		$("#recipient_row5").remove();
+		$("#recipient_name_row5").remove();
 		var add_button_row = $("#add_button_row");
 		add_button_row.remove();
 		numTextFields++;
 		recipientNumber--;
-		add_button_row.insertAfter('#recipient_row' + (recipientNumber - 1));
+		var htmlElemToInsertAfter;
+		if (($("#recipient_name_row" + (recipientNumber - 1))).length > 0) {
+			htmlElemToInsertAfter = "#recipient_name_row" + (recipientNumber - 1);
+		} else {
+			htmlElemToInsertAfter = "#recipient_row" + (recipientNumber - 1);
+		}
+
+		add_button_row.insertAfter(htmlElemToInsertAfter);
 	}
 });
-
-
 function addTextField() {
 	ga("send", "event", "whoNew_plusButton", "click");
 	if (numTextFields > 0) {
 		var newTextField = "<tr id='recipient_row" + recipientNumber
 			+ "'><td class='contact_row'><input class='recipient_textbox' id='recipient"
 			+ recipientNumber + "' type='tel' placeholder='Input phone number' name='recipient"
-			+ recipientNumber +"'></td></tr>";
-
-		$(newTextField).insertAfter('#recipient_row' + (recipientNumber - 1));
+			+ recipientNumber +"'><a id='add_name" + recipientNumber + "' class='add_name_btn'><img class='plus_btn' " + 
+			"src='images/add_user_btn.png'></a></td></tr>";
+			var htmlElemToInsertAfter;
+			if (($("#recipient_name_row" + (recipientNumber - 1))).length > 0) {
+				htmlElemToInsertAfter = "#recipient_name_row" + (recipientNumber - 1);
+			} else {
+				htmlElemToInsertAfter = "#recipient_row" + (recipientNumber - 1);
+			}
+		$(newTextField).insertAfter(htmlElemToInsertAfter);
 		numTextFields--;
 		recipientNumber++;
 	}

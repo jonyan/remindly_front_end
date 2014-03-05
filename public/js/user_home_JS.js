@@ -49,8 +49,9 @@ function onReceiveRemindlys(result) {
 		 // "<table id='pending_remindly_table'><tr><td>" + extractedmsg+ "</td></tr></table><br>").insertAfter('#numpending')
 
 		// style 4:
-		$("<p id='msginfo'>To: " + message['recipients']
-			+ "</p>"+ "<table id='pending_remindly_table'><tr><td>" + extractedmsg + "</tr><tr><td><i class='body_small_text'>"
+
+		$("<div id='msginfo'>To: " + message['recipients']
+			+ "</div>"+ "<table id='pending_remindly_table'><tr><td>" + extractedmsg + "</tr><tr><td><i class='body_small_text'>"
 			+ datetime[0] + " at " + datetime[1] + "</i></td></tr></table><hr>").insertAfter('#numpending');
 	}
 }

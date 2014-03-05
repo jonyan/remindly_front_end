@@ -10,7 +10,8 @@ function initializePage() {
  	var user_name = $('#settings_user_name_field').val();
 	$.cookie("user_phone", user_phone);
 	$.cookie("name", user_name);
-	alert("Update Success! Click Home!");
+	alert("Update Success!");
+	window.location.href = "/user_home";
  }
 
 $(function() {

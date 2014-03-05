@@ -1,27 +1,4 @@
-#pending_remindly_table {
-	font-family: "helvetica";
-	/*color: white;*/
-	background-color: rgba(122, 205, 75, 1);
-/*	border: 1px solid;*/
-	margin: auto;
-	width: 90%;
-	border-radius:12px;
-	padding:5px;
-	color: white;
-}
-#pending_remindly_table td {
-	text-align:right;
-	vertical-align:bottom;
-}
-#pending_remindly_table th {
-	vertical-align: top;
-	text-align: left;
-}
-#msginfo {
-	margin:auto;
-	padding-left: 30px;
-	padding-top: 5px;
-}
+
 
 #hidden_form_data {
 	position: absolute;
@@ -40,6 +17,9 @@ body {
 	font-family: "helvetica";
 	/*background-color: black;*/
 }
+	.link {
+		text-decoration: none;
+	}
 
 /* Prevents mobile browser from autozooming when 
  * user selects to edit a form field (when mobile
@@ -124,10 +104,12 @@ body {
 		font-weight: 300;
 		text-align: center;
 		margin-bottom: .4em;
+		opacity: .7;
 
 	}
 
 	.sub_body_header_text {
+		opacity: .6;
 		font-size: 0.8em;
 		font-family: "helvetica";
 		font-weight: 100;
@@ -322,11 +304,12 @@ body {
 	}
 
 	#settings_user_phone_field {
+		margin-bottom: -1em;
 		text-align: center;
 		letter-spacing: .4em;
     border: 1px solid #c4c4c4;
     width: 80%;
-    height: 2em;
+    height: 1.6em;
     font-size: 16px;
     padding: 4px;
     border-radius: 4px;
@@ -377,8 +360,130 @@ body {
     -webkit-box-shadow: 0px 0px 8px #7bc1f7;
 
 	}
+	.footer_single_btn_higher {
+		margin-top: -.7em;
+		margin-left: .7em;
+		text-align: center;
+	  border: 1px solid rgba(122, 205, 75, 1);
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.5em; 
+	  width: 83%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(122, 205, 75, 1);
+		overflow: auto;
+
+	}
+	.footer_single_btn {
+		margin-top: 1em;
+		margin-left: .7em;
+		text-align: center;
+	  border: 1px solid rgba(122, 205, 75, 1);
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.5em; 
+	  width: 83%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(122, 205, 75, 1);
+		overflow: auto;
+
+	}
+
 
 	/* END SETTING PAGE STYLING */
+
+	/* CONTACTS PAGE STYLING */
+
+	.contact_textbox {
+		font-size: .68em;
+		font-family: "helvetica";
+		font-weight: 400;
+	  border: 1px solid #848484; 
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.6em; 
+	  width: 55%; 
+	  float: right;
+	  margin-right: 10%;
+
+	}
+	.light {
+		font-size: .8em;
+		opacity: .8;
+		margin-top: 0;
+		margin-left: 10%;
+		font: helvetica;
+		font-weight: 100;
+		display: inline;
+		width: 15%;
+	}
+
+	.bold {
+		margin-top: 0;
+		font-size: .8em;
+		opacity: .8;
+		margin-left: 5%;
+		font: helvetica;
+		font-weight: 400;
+
+		display: inline;
+		width: 25%;
+	}
+
+	.contact_text {
+		display: inline;
+		background-color: red;
+	}
+
+	.contact_label {
+		font-size: .8em;
+		margin-left: 5%;
+	}
+
+	.edit_btn_row {
+		margin-top: -30px;
+		height: .1em;
+	}
+	
+	.delete_btn {
+		width: 7%;
+		height: auto;
+		float: right;
+		margin-top: -.4em;
+		margin-right: 4%;
+	}
+
+	.edit_btn {
+		width: 1em;
+		height: auto;
+		float: right;
+		margin-top: -1em;
+		margin-right: 3%;
+	}
+
+	#top_hr_line{
+		width: 95%;
+	}
+
+	.add_contact_row {
+		width: 59%;
+		height: .5em;
+		padding-left: 4%;
+	}
+	#delete_contact_button_text {
+		color: white;
+		font-size: 1em;
+		margin-top: .19em;
+		font-weight: lighter;
+	}
 
 
 	/* USER_HOME PAGE STYLING*/
@@ -389,19 +494,77 @@ body {
 		font-weight: 200;
 	}
 
+	#pending_remindly_table {
+		font-family: "helvetica";
+		/*color: white;*/
+		background-color: rgba(122, 205, 75, 1);
+	/*	border: 1px solid;*/
+		margin: auto;
+		width: 90%;
+		border-radius:12px;
+		padding:5px;
+		color: white;
+	}
+
+	#pending_remindly_table td {
+		text-align:right;
+		vertical-align:bottom;
+	}
+
+	#pending_remindly_table th {
+		vertical-align: top;
+		text-align: left;
+	}
+
+	#msginfo {
+		font-size: .98em;
+		opacity: .6;
+		white-space: pre-wrap;      /* CSS3 */   
+	  white-space: -moz-pre-wrap; /* Firefox */    
+	  white-space: -pre-wrap;     /* Opera <7 */   
+	  white-space: -o-pre-wrap;   /* Opera 7 */    
+	  word-wrap: break-word;      /* IE */
+
+		margin:auto;
+		padding-left: 30px;
+		padding-top: 5px;
+	}
+
+	/* END USER_HOME PAGES STYLING */
+
+
 	/* WHO PAGE STYLING */
 
 	#contacts_container {
-		/*background-color: red;*/
 		width: 100%;
 	}
 
 	.contact_row {
-		/*background-color: green;*/
-		width: 12em;
-		/*width: 400px;*/
-		height: 50px;
+		width: 92%;
+		height: 40px;
 	}
+
+	.recipient_name_textbox {
+		font-size: .6em;
+		font-family: "helvetica";
+		font-weight: 400;
+	  border: 1px solid #848484; 
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.5em; 
+	  width: 73%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+
+	}
+	.sub_arrow {
+		width: 9%;
+		height: auto;
+		margin-left: 10px;
+	}
+
 
 
 	.recipient_textbox { 
@@ -413,32 +576,41 @@ body {
 	  -moz-border-radius: 10px; 
 	  border-radius: 10px; 
 	  outline:0; 
-	  height:1.7em; 
-	  width: 90%; 
+	  height:1.5em; 
+	  width: 83%; 
 	  padding-left:10px; 
-	  padding-right:10px; 
 	} 
 
-	#plus_row_button {
+	.plus_btn {
+		margin-top: .15em;
+		float: right;
+		width: 8.5%;
+		height: auto;
+	}
+	#add_recipient_link {
+		text-decoration: none;
+	}
+
+	#add_recipient_row_button {
 		text-align: center;
 	  border: 1px solid rgba(122, 205, 75, 1);
 	  -webkit-border-radius: 10px; 
 	  -moz-border-radius: 10px; 
 	  border-radius: 10px; 
 	  outline:0; 
-	  height:1.6em; 
-	  width: 90%; 
+	  height:1.5em; 
+	  width: 83%; 
 	  padding-left:10px; 
 	  padding-right:10px; 
 		background-color: rgba(122, 205, 75, 1);
 		overflow: auto;
-
+		font-size: .9em;
 	}
 
 	#plus_button_text {
 		color: white;
-		margin-top: -.17em;
-		font-size: 1.5em;
+		margin-top: .19em;
+		font-size: 1em;
 	}
 
 
@@ -630,14 +802,14 @@ body {
 	}
 
 	.body_container {
-		min-width: 350px;
+		min-width: 400px;
 		width: 40%;
 		background-color: #f6f6f6;
 		/*height: 100%;*/
 		margin-right: auto;
 		margin-left: auto;
 		min-height: 650px;
-				position: relative;
+		position: relative;
 
 	}
 
@@ -649,6 +821,20 @@ body {
 		font-weight: lighter;
 		top: none;
 	}
+
+	.horizontal_line {
+		width: 100%;
+		/*margin-right: auto;*/
+		margin-top: .8em;
+	}
+	.horizontal_line_td {
+		width: 13em;
+	}
+	.horizontal_line2 {
+		width: 100%;
+		margin-left: -3%;
+	}
+
 
 /* HEADER STYLING */
 
@@ -901,16 +1087,15 @@ body {
 	/* SETTINGS PAGE STYLING */
 
 	#settings_form_container {
-		margin-right: 12%;
+		margin-right: auto;
 		margin-left: auto;
 		width: 85%;
 		text-align: right;
-		/*background-color: red;*/
 	}
 
 
 	.settings_field_label {
-		margin-right: 5%;
+		margin-right: 1%;
 		/*padding-bottom: 110px;*/
 		/*color: white;*/
 	}
@@ -969,21 +1154,49 @@ body {
 
 	}
 
+.footer_single_btn_higher {
+		margin-left: .7em;
+		text-align: center;
+	  border: 1px solid rgba(122, 205, 75, 1);
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.6em; 
+	  width: 83%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(122, 205, 75, 1);
+		overflow: auto;
+
+	}
+
+
+	.footer_single_btn {
+		margin-top: 1em;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	  border: 1px solid rgba(122, 205, 75, 1);
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.6em; 
+	  width: 83%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(122, 205, 75, 1);
+		overflow: auto;
+
+	}
+
 	/* END SETTING PAGE STYLING */
 
-	/* WHO PAGE STYLING */
+	/* CONTACTS PAGE STYLING */
 
-	#contacts_container {
-		width: 100%;
-	}
-
-	.contact_row {
-		width: 45%;
-		height: 50px;
-	}
-
-
-	.recipient_textbox { 
+	.contact_textbox {
+		margin-left: 1em;
 		font-size: .7em;
 		font-family: "helvetica";
 		font-weight: 400;
@@ -993,12 +1206,176 @@ body {
 	  border-radius: 10px; 
 	  outline:0; 
 	  height:2em; 
-	  width: 90%; 
+	  width: 60%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+	  float: right;
+	  margin-right: 10%;
+
+	}
+	.light {
+		opacity: .8;
+		margin-top: 0;
+		margin-left: 20%;
+		font: helvetica;
+		font-weight: 100;
+		display: inline;
+		width: 15%;
+	}
+
+	.bold {
+		opacity: .8;
+		margin-left: 5%;
+		font: helvetica;
+		font-weight: 400;
+
+		display: inline;
+		width: 25%;
+	}
+
+	.contact_text {
+		display: inline;
+		background-color: red;
+	}
+
+	.contact_label {
+		margin-left: 5%;
+	}
+
+	.edit_btn_row {
+		margin-top: -30px;
+		height: .1em;
+	}
+	
+	.delete_btn {
+		width: 4.5%;
+		height: auto;
+		float: right;
+		margin-top: -.4em;
+		margin-right: 4%;
+	}
+
+	.edit_btn {
+		float: right;
+		margin-top: -1em;
+		margin-right: 3%;
+	}
+
+	#top_hr_line{
+		width: 95%;
+	}
+
+	.add_contact_row {
+		width: 50%;
+		height: .5em;
+		padding-left: 4%;
+	}
+	#delete_contact_button_text {
+		color: white;
+		font-size: 1em;
+		margin-top: .19em;
+		font-weight: lighter;
+	}
+	
+		/* USER_HOME PAGE STYLING*/
+
+	#numpending {
+		font-size: .8em;
+		text-align: center;
+		font-weight: 200;
+	}
+
+	#pending_remindly_table {
+		font-family: "helvetica";
+		background-color: rgba(122, 205, 75, 1);
+		margin: auto;
+		width: 90%;
+		border-radius:12px;
+		padding:5px;
+		color: rgb(247, 247, 247);
+	}
+
+	#pending_remindly_table td {
+		text-align:right;
+		vertical-align:bottom;
+	}
+
+	#pending_remindly_table th {
+		vertical-align: top;
+		text-align: left;
+	}
+
+	#msginfo {
+		opacity: .6;
+		margin:auto;
+		padding-left: 30px;
+		padding-top: 5px;
+	}
+
+	/* END USER_HOME PAGES STYLING */
+
+	/* WHO PAGE STYLING */
+
+	#contacts_container {
+		width: 100%;
+	}
+
+	.contact_row {
+		width: 50%;
+		height: 2em;
+	}
+
+	.plus_btn {
+		float: right;
+		margin-right: 1%;
+		width: 6%;
+		height: auto;
+	}
+
+
+	.recipient_textbox { 
+		margin-left: 1em;
+		font-size: .7em;
+		font-family: "helvetica";
+		font-weight: 400;
+	  border: 1px solid #848484; 
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:2em; 
+	  width: 83%; 
 	  padding-left:10px; 
 	  padding-right:10px; 
 	} 
 
-	#plus_row_button {
+
+
+	.sub_arrow {
+		width:6%; 
+		height:auto;
+		margin-left: 23px;
+	}
+
+	.recipient_name_textbox {
+		margin-left: 1em;
+		font-size: .7em;
+		font-family: "helvetica";
+		font-weight: 400;
+	  border: 1px solid #848484; 
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:2em; 
+	  width: 73%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+
+	}
+
+	#add_recipient_row_button {
+		margin-left: .7em;
 		text-align: center;
 	  border: 1px solid rgba(122, 205, 75, 1);
 	  -webkit-border-radius: 10px; 
@@ -1006,7 +1383,7 @@ body {
 	  border-radius: 10px; 
 	  outline:0; 
 	  height:1.6em; 
-	  width: 90%; 
+	  width: 83%; 
 	  padding-left:10px; 
 	  padding-right:10px; 
 		background-color: rgba(122, 205, 75, 1);
@@ -1016,8 +1393,9 @@ body {
 
 	#plus_button_text {
 		color: white;
-		margin-top: -.17em;
-		font-size: 1.5em;
+		font-size: 1em;
+		margin-top: .19em;
+		font-weight: lighter;
 	}
 
 	input.textbox::-webkit-input-placeholder {font-style: italic;}
@@ -1034,37 +1412,12 @@ body {
 		border-radius:10px;
 		text-align: left;
 	}
-	.contact_text {
-		margin-left: 8px;
-		text-decoration: none;
-	}
-
-	.contact_link {
-		text-decoration: none;
-	}
-	.contact_link:visited {
-		color:black;
-		text-decoration: none;
-	}
 
 
-	.select_me_contact_btn {
-		border: 1px solid #848484; 
-	  -webkit-border-radius: 10px; 
-	  -moz-border-radius: 10px; 
-	  border-radius: 10px; 
-	  outline:0; 
-	  height:25px; 
-	  width: 90%; 
-	  padding-left:10px; 
-	  padding-right:10px; 
-		background-color: rgba(254, 254, 254, .5);
-		text-align: left;
-	}
 
 	#checkbox_container {
 		float: left;
-		margin-left: .5em;
+		margin-left: 1em;
 	}
 
 	input[type=checkbox].css-checkbox {
