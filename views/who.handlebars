@@ -23,6 +23,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
 	
 </head>
 
@@ -47,8 +50,9 @@
 							</tr>
 							
 							<tr id="recipient_row1">
-								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" placeholder="Input phone number" name="recipient1"><a id="add_name1" class="add_name_btn"><img class="plus_btn" src="images/add_user_btn.png"></a></td>
+								<td class="contact_row"><input onclick="auto_complete()" class="recipient_textbox" id="recipient1" type="tel" placeholder="Input name or phone number" name="recipient1"><a id="add_name1" class="add_name_btn"><img class="plus_btn" src="images/add_user_btn.png"></a></td>
 							</tr>
+
 
 
 							<tr id="add_button_row">
@@ -75,8 +79,10 @@
 
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery.js"></script>
+	 <script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/jquery.cookie.js"></script>
+
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/who_JS.js"></script>
 	<!-- <script>

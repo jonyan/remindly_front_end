@@ -1,15 +1,21 @@
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+// 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+// 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+// 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	
-	ga('send', 'timing', 'timeSpent', 'newWhoPage', 50, 'Remindly', {'page': '/who'});
+// 	ga('send', 'timing', 'timeSpent', 'newWhoPage', 50, 'Remindly', {'page': '/who'});
 
 var startTime;
 
 $(document).ready(function() {
 	startTime = new Date().getTime();
 	console.log("Started watching: " + startTime);
+	var user_id = $.cookie("user_id");
+	$.post("http://www.aerodroid.com/remindly/user_contacts.php",
+		{
+			"user_id" : user_id
+		},
+	onFinishPost);
 });
 
 
@@ -29,7 +35,7 @@ function submitWhoData() {
 	} else {
 		var endTime = new Date().getTime();
 		var timeSpent = endTime - startTime;
-	  ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
+	  // ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
 	  // _gaq.push(['_trackTiming', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly']);
 	  console.log("Finished timing: " + timeSpent);
 	  submitNewContacts();
@@ -51,35 +57,15 @@ function submitNewContacts() {
 							"name" : name,
 							"phone" : phone
 						},
-				onFinishPost);
+				onFinishSubmit);
 			}
-		} else {
-			console.log(row + "th row doesn't exist");
-
 		}
 	}
 }
 
-function onFinishPost(result) {
+function onFinishSubmit(result) {
 	console.log(result);
 }
-
-// 	var data = {
-// 			'newContact' : [
-// 				{"user_id" : $.cookie(“user_id”)},
-// 				{"name" : req.query.recipient1},
-// 				{"recipient" : req.query.recipient2},
-// 				{"recipient" : req.query.recipient3},
-// 				{"recipient" : req.query.recipient4}
-// 			]
-// 		}
-// }
-
-// 	var nondigits = /\D/g;
-
-// else if(phone_number.length != 10 || nondigits.test(phone_number)) {
-// 		alert("Please enter a valid 10 digit phone number.");
-// 	} 
 
 function isInvalid() {
 	var isInvalid = false;
@@ -164,11 +150,11 @@ $('#me').change(function() {
 	}
 });
 function addTextField() {
-	ga("send", "event", "whoNew_plusButton", "click");
+	// ga("send", "event", "whoNew_plusButton", "click");
 	if (numTextFields > 0) {
 		var newTextField = "<tr id='recipient_row" + recipientNumber
-			+ "'><td class='contact_row'><input class='recipient_textbox' id='recipient"
-			+ recipientNumber + "' type='tel' placeholder='Input phone number' name='recipient"
+			+ "'><td class='contact_row'><input onclick='auto_complete()'' class='recipient_textbox' id='recipient"
+			+ recipientNumber + "' type='tel' placeholder='Input name or phone number' name='recipient"
 			+ recipientNumber +"'><a id='add_name" + recipientNumber + "' class='add_name_btn'><img class='plus_btn' " + 
 			"src='images/add_user_btn.png'></a></td></tr>";
 			var htmlElemToInsertAfter;
@@ -191,4 +177,34 @@ $(function() {
 		window.location.href = "/?message=error2";
 	}
 });
+
+var availableTags = new Array();
+
+function onFinishPost(result) {
+	console.log(result);
+	for(var i in result) {
+		var contact = result[i];
+		availableTags[i] = contact['name'];
+	}
+	// for(var i in result) {
+	// 	var contact = result[i];
+	// 	availableTags[i] = contact['name'];
+	// }
+
+
+	// 		console.log("     Name: " + contact['name']);
+	// 	console.log("     Phone: " + contact['phone']);
+
+}
+
+
+// AUTO COMPLETE CODE
+
+function auto_complete() {
+	console.log("hello");
+	$( ".recipient_textbox" ).autocomplete({
+    source: availableTags
+  });
+
+}
 
