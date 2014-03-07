@@ -53,7 +53,7 @@ function sendMessageData() {
 	var time = $('#time').val();
 	var preMessage = $('#message_textbox').val();
 
-	var message = $.cookie("name") + ": " + preMessage;
+	var message = $.cookie("name") + ": " + preMessage + "-via Remindly.me";
 
 	var recipients = "";
 

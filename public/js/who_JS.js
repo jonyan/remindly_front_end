@@ -1,10 +1,10 @@
-// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-// 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-// 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-// 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	
-// 	ga('send', 'timing', 'timeSpent', 'newWhoPage', 50, 'Remindly', {'page': '/who'});
-var contactsJson;
+	ga('send', 'timing', 'timeSpent', 'newWhoPage', 50, 'Remindly', {'page': '/who'});
+
 var startTime;
 
 $(document).ready(function() {
@@ -18,15 +18,6 @@ $(document).ready(function() {
 	onFinishPost);
 });
 
-
-$(document).on('click', '.add_name_btn', function() {
-	var id = $(this).closest("tr").attr("id");
-	$("<tr id='recipient_name_row" + id.substr(13) + "'><td class='contact_row'><img class='sub_arrow' src='images/sub_arrow.png'><input class='recipient_name_textbox' id='recipient_name_textbox" + id.substr(13) +"' type='text' placeholder='Input Name to Save in Contacts'></td></tr>").insertAfter("#" + id);
-	$("#add_name" + id.substr(13)).replaceWith("<a id='add_name_faded'> <img class='plus_btn' src='images/add_user_btn_faded.png'></a>");
-
-});
-
-
 function submitWhoData() {
 	if (isEmpty()) {
 		alert("Please select at least one recipient");
@@ -38,10 +29,9 @@ function submitWhoData() {
 	  // ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
 	  // _gaq.push(['_trackTiming', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly']);
 	  console.log("Finished timing: " + timeSpent);
-	  if (submitNewContacts()) {
-		  fillHiddenFormFields();
-			$('#add_contacts_form').submit();
-		}
+	  console.log("hello");
+	  fillHiddenFormFields();
+		$('#add_contacts_form').submit();
 	}
 }
 
@@ -70,37 +60,7 @@ function getNumber(value) {
 				return contact['phone'];
 		}
 	}
-}
-
-function submitNewContacts() {
-	for (var row = 1; row <= 5; row++) {
-		if ($("#recipient_name_row" + row).length > 0){
-			if ($("#recipient_name_textbox" + row).val() != "") {
-				if (!isNumber($("#recipient_name_textbox" + row).val())) {
-					alert("Must input number to add contact!");
-					return false;
-				} else {
-					var user_id = $.cookie('user_id');
-					var name = $("#recipient_name_textbox" + row).val();
-					var phone = $("#recipient_input" + row).val();
-					$.post("http://www.aerodroid.com/remindly/add_contact.php",
-							{
-								"user_id" : user_id,
-								"name" : name,
-								"phone" : phone
-							},
-					onFinishSubmit);
-					return true;
-				}
-			}
-		}
-	}
-	return true;
-}
-
-function onFinishSubmit(result) {
-	return true;
-}
+} 
 
 function isInvalid() {
 	var isInvalid = false;
@@ -146,17 +106,17 @@ function doesNameExist(value) {
 
 function isEmpty() {
 	var isEmpty = true;
-	if (!$('#me_input').is(":checked")) {
+	if (!$('#me').is(":checked")) {
 		var index = 1;
 
-		var value = $('#recipient_input' + index.toString()).val();
+		var value = $('#recipient' + index.toString()).val();
 		while(value != null) {
 			if (value != "") {
 				isEmpty == false;
 				return false;
 			}
 			index++;
-			value = $('#recipient_input' + index.toString()).val();
+			value = $('#recipient' + index.toString()).val();
 		}
 	} else {
 		isEmpty = false;
@@ -179,48 +139,36 @@ function isEmpty() {
 var numTextFields = 3;
 var recipientNumber = 2;
 
-$('#me_input').change(function() {
-	if ($('#me_input').is(':checked'))  {
+$('#me').change(function() {
+	if ($('#me').is(':checked'))  {
 		numTextFields--;
 	} else {
 		numTextFields++;
 	}
-	if ((!$('#me_input').is(':checked')) && numTextFields <= 1) {
+	if ((!$('#me').is(':checked')) && numTextFields <= 1) {
 		console.log("uncheck and add field");
 		addTextField();
 	}
-	if ($('#me_input').is(':checked') && numTextFields < 0) {
-		$("#recipient_row5").remove();
-		$("#recipient_name_row5").remove();
+	if ($('#me').is(':checked') && numTextFields < 0) {
+		$("#recipient5").remove();
 		var add_button_row = $("#add_button_row");
 		add_button_row.remove();
 		numTextFields++;
 		recipientNumber--;
-		var htmlElemToInsertAfter;
-		if (($("#recipient_name_row" + (recipientNumber - 1))).length > 0) {
-			htmlElemToInsertAfter = "#recipient_name_row" + (recipientNumber - 1);
-		} else {
-			htmlElemToInsertAfter = "#recipient_row" + (recipientNumber - 1);
-		}
-
-		add_button_row.insertAfter(htmlElemToInsertAfter);
+		add_button_row.insertAfter('#recipient_row' + (recipientNumber - 1));
 	}
 });
+
+
 function addTextField() {
-	// ga("send", "event", "whoNew_plusButton", "click");
+	ga("send", "event", "whoNew_plusButton", "click");
 	if (numTextFields > 0) {
 		var newTextField = "<tr id='recipient_row" + recipientNumber
-			+ "'><td class='contact_row'><input onclick='auto_complete()'' class='recipient_textbox' id='recipient_input"
-			+ recipientNumber + "' type='tel' placeholder='Input name or phone number' name='recipient_input"
-			+ recipientNumber +"'><a id='add_name" + recipientNumber + "' class='add_name_btn'><img class='plus_btn' " + 
-			"src='images/add_user_btn.png'></a></td></tr>";
-			var htmlElemToInsertAfter;
-			if (($("#recipient_name_row" + (recipientNumber - 1))).length > 0) {
-				htmlElemToInsertAfter = "#recipient_name_row" + (recipientNumber - 1);
-			} else {
-				htmlElemToInsertAfter = "#recipient_row" + (recipientNumber - 1);
-			}
-		$(newTextField).insertAfter(htmlElemToInsertAfter);
+			+ "'><td class='contact_row'><input onclick='auto_complete()' class='recipient_textbox' id='recipient_input"
+			+ recipientNumber + "' type='tel' placeholder='Input phone number' name='recipient_input"
+			+ recipientNumber +"'></td></tr>";
+
+		$(newTextField).insertAfter('#recipient_row' + (recipientNumber - 1));
 		numTextFields--;
 		recipientNumber++;
 	}
@@ -255,4 +203,3 @@ function auto_complete() {
   });
 
 }
-

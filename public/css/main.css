@@ -1348,20 +1348,12 @@ body {
 	}
 
 	.contact_row {
-		width: 50%;
-		height: 2em;
-	}
-
-	.plus_btn {
-		float: right;
-		margin-right: 1%;
-		width: 6%;
-		height: auto;
+		width: 45%;
+		height: 50px;
 	}
 
 
 	.recipient_textbox { 
-		margin-left: 1em;
 		font-size: .7em;
 		font-family: "helvetica";
 		font-weight: 400;
@@ -1371,38 +1363,12 @@ body {
 	  border-radius: 10px; 
 	  outline:0; 
 	  height:2em; 
-	  width: 83%; 
+	  width: 90%; 
 	  padding-left:10px; 
 	  padding-right:10px; 
 	} 
 
-
-
-	.sub_arrow {
-		width:6%; 
-		height:auto;
-		margin-left: 23px;
-	}
-
-	.recipient_name_textbox {
-		margin-left: 1em;
-		font-size: .7em;
-		font-family: "helvetica";
-		font-weight: 400;
-	  border: 1px solid #848484; 
-	  -webkit-border-radius: 10px; 
-	  -moz-border-radius: 10px; 
-	  border-radius: 10px; 
-	  outline:0; 
-	  height:2em; 
-	  width: 73%; 
-	  padding-left:10px; 
-	  padding-right:10px; 
-
-	}
-
-	#add_recipient_row_button {
-		margin-left: .7em;
+	#plus_row_button {
 		text-align: center;
 	  border: 1px solid rgba(122, 205, 75, 1);
 	  -webkit-border-radius: 10px; 
@@ -1410,7 +1376,7 @@ body {
 	  border-radius: 10px; 
 	  outline:0; 
 	  height:1.6em; 
-	  width: 83%; 
+	  width: 90%; 
 	  padding-left:10px; 
 	  padding-right:10px; 
 		background-color: rgba(122, 205, 75, 1);
@@ -1420,9 +1386,8 @@ body {
 
 	#plus_button_text {
 		color: white;
-		font-size: 1em;
-		margin-top: .19em;
-		font-weight: lighter;
+		margin-top: -.17em;
+		font-size: 1.5em;
 	}
 
 	input.textbox::-webkit-input-placeholder {font-style: italic;}
@@ -1439,12 +1404,37 @@ body {
 		border-radius:10px;
 		text-align: left;
 	}
+	.contact_text {
+		margin-left: 8px;
+		text-decoration: none;
+	}
+
+	.contact_link {
+		text-decoration: none;
+	}
+	.contact_link:visited {
+		color:black;
+		text-decoration: none;
+	}
 
 
+	.select_me_contact_btn {
+		border: 1px solid #848484; 
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:25px; 
+	  width: 90%; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(254, 254, 254, .5);
+		text-align: left;
+	}
 
 	#checkbox_container {
 		float: left;
-		margin-left: 1em;
+		margin-left: .5em;
 	}
 
 	input[type=checkbox].css-checkbox {
