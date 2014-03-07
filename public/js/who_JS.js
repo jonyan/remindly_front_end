@@ -114,7 +114,7 @@ function addTextField() {
 	if (numTextFields > 0) {
 		var newTextField = "<tr id='recipient_row" + recipientNumber
 			+ "'><td class='contact_row'><input class='recipient_textbox' id='recipient"
-			+ recipientNumber + "' type='tel' placeholder='Input phone number' name='recipient"
+			+ recipientNumber + "' type='tel' placeholder='Add another name or number...' name='recipient"
 			+ recipientNumber +"'></td></tr>";
 
 		$(newTextField).insertAfter('#recipient_row' + (recipientNumber - 1));

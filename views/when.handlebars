@@ -18,8 +18,7 @@
 <body>
 	<div class="body_container">
 		<div class="header_bar">
-			<div><a class="header_back_btn" onclick="goToHomeAction()">Cancel</a></div>
-			<a href="/settings"><div class="settings_button"><img class="settings_icon_img" src="images/settings_icon.png"></div></a>
+			<div><a class="header_back_btn" onclick="cancelAction()">Cancel</a></div>
 			<center><a onclick="goToHomeAction()"><img class="header_logo" src="images/Logo_thicker.png"></a></center>
 		</div>
 
@@ -47,13 +46,11 @@
 					</tr>
 				</table>
 				<!-- End of hidden form -->
-				<br>
 
 				<div id="wrap">
 					<center>
-						<label class="header_normal_text" for="datetime">Tap to select date/time</label>
+						<label class="body_normal_text" for="datetime">Tap to select date/time...</label>
 						<input type="text" name="datetime" id="datetime"/>
-						<input type="datetime" name="datetime2" id="datetime2"/>
 					</center>
 					<div id="hidden">
 						<center>

@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<!-- Google Analytics Content Experiment code -->
+<!-- Google Analytics Content Experiment code 
 <script>function utmx_section(){}function utmx(){}(function(){var
 k='82947326-7',d=document,l=d.location,c=d.cookie;
 if(l.search.indexOf('utm_expid='+k)>0)return;
@@ -16,7 +16,7 @@ length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
 '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
 valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
+</script><script>utmx('url','A/B');</script>-->
 <!-- End of Google Analytics Content Experiment code -->
 
 	<meta charset="utf-8">
@@ -29,13 +29,12 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 <body>
 	<div class="body_container">
 		<div class="header_bar">
-			<div><a class="header_back_btn" onclick="goToHomeAction()">Cancel</a></div>
-			<a href="/settings"><div class="settings_button"><img class="settings_icon_img" src="images/settings_icon.png"></div></a>
+			<div><a class="header_back_btn" onclick="cancelAction()">Cancel</a></div>
 			<center><a onclick="goToHomeAction()"><img class="header_logo" src="images/Logo_thicker.png" ></a></center>
 		</div>
 		
 		<div id="body">
-			<h2 class="body_header_text">Add Up to 5 Recipients</h2>
+			<h2 class="body_header_text">Send this Remindly to...</h2>
 			
 			<form id="add_contacts_form" role="form" method="get" action="/when">
 
@@ -43,11 +42,11 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 				<center>
 						<table>
 							<tr>
-								<td class="contact_row" ><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Me</label></div></td>
+								<td class="contact_row" ><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Myself</label></div></td>
 							</tr>
 							
 							<tr id="recipient_row1">
-								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" placeholder="Input phone number" name="recipient1"></td>
+								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" placeholder="Add another name or number..." name="recipient1"></td>
 							</tr>
 
 							<tr id="add_button_row">
@@ -66,7 +65,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 			<div class="nav_footer">
 				<div class="nav_footer_btn_container">
-					<a class="nav_footer_link" onclick="submitWhoData()" ><div class="nav_footer_button next">When&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" onclick="submitWhoData()" ><div class="nav_footer_button next">Choose when to send&nbsp;&gt;</div></a>
 				</div>
 				<div class="nav_footer_btn_buffer"></div>
 

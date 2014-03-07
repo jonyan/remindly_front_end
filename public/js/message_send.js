@@ -24,7 +24,7 @@ function displayHeaderInfo() {
 	
 	var recipients = "";
 	if (recipient1 == "self") {
-		recipients += "Myself";
+		recipients += "myself";
 	} else if(recipient1 != "name=\"recipient1\"") {
 		recipients += recipient1;
 	}
@@ -41,7 +41,7 @@ function displayHeaderInfo() {
 		recipients += ", " + recipient4;
 	}
 
-	$("<h2 class='body_header_text'>Send a Remindly to " + recipients + " on " + datetime[0] + " at " + datetime[1] + "!</h2>").insertBefore("#message_container");
+	$("<h2 class='body_normal_text'>This Remindly will be sent to " + recipients + " on " + datetime[0] + " at " + datetime[1] + ".</h2>").insertAfter("#message_container");
 }
 
 function sendMessageData() {
