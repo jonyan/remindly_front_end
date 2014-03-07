@@ -48,6 +48,12 @@ function goToHomeAction() {
 	window.location.href = "/user_home";
 }
 
+function cancelAction() {
+	var confirmCancel = confirm("Are you sure you want to cancel? This Remindly will be discarded.");
+	if(confirmCancel)
+		goToHomeAction();
+}
+
 function isLoggedIn() {
 	return $.cookie("user_phone") && $.cookie("name") && $.cookie("user_id");
 }

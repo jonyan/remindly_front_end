@@ -34,32 +34,35 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 <body>
 	<div class="body_container">
 		<div class="header_bar">
-			<div><a class="header_back_btn" onclick="goToHomeAction()">Cancel</a></div>
-			<a href="/settings"><div class="settings_button"><img class="settings_icon_img" src="images/settings_icon.png"></div></a>
+			<div><a class="header_back_btn" onclick="cancelAction()">Cancel</a></div>
 			<center><a onclick="goToHomeAction()"><img class="header_logo" src="images/Logo_thicker.png" ></a></center>
 		</div>
 		
 		<div id="body">
-			<h2 class="body_header_text">Add Up to 5 Recipients</h2>
-		
+<<<<<<< HEAD
+			<h2 class="body_header_text">Send this Remindly to...</h2>
+			
+			<form id="add_contacts_form" role="form" method="get" action="/when">
+
 			<div id="contacts_container">
 				<center>
-					<table id="contacts_table">
-						<tr>
-							<td class="contact_row" ><div id="checkbox_container"><input type="checkbox" name="me" id="me_input" class="css-checkbox" name="me_input" checked="checked"/><label for="me_input" class="css-label">Me</label></div></td>
-						</tr>
-						
-						<tr id="recipient_row1">
-							<td class="contact_row"><input onclick="auto_complete()" class="recipient_textbox" id="recipient_input1" type="tel" placeholder="Input name or phone number" name="recipient_input1"></td>
-						</tr>
+						<table>
+							<tr>
+								<td class="contact_row" ><div id="checkbox_container"><input type="checkbox" name="me" id="me" class="css-checkbox" name="me" checked="checked"/><label for="me" class="css-label">Myself</label></div></td>
+							</tr>
+							
+							<tr id="recipient_row1">
+								<td class="contact_row"><input class="recipient_textbox" id="recipient1" type="tel" placeholder="Add another name or number..." name="recipient1"></td>
+							</tr>
 
-						<tr id="add_button_row">
-							<td><div id="plus_row_button" onclick="addTextField()"><div id="plus_button_text">+</div></div></td>
-						</tr>
-					</table>
+							<tr id="add_button_row">
+								<td><div id="plus_row_button" onclick="addTextField()"><div id="plus_button_text">+</div></div></td>
+							</tr>
 
-					<form id="add_contacts_form" role="form" method="get" action="/when">
-						<input type="checkbox" checked="checked" id="me" name='me' class="hidden">
+							<tr>
+								<td><input type="submit" id="submitBtn" value="Submit"></td>
+							</tr>
+						</table>
 					</form>
 				</center>
 			</div>
@@ -68,7 +71,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 			<div class="nav_footer">
 				<div class="nav_footer_btn_container">
-					<a class="nav_footer_link" onclick="submitWhoData()" ><div class="nav_footer_button1 next">When&nbsp;&gt;</div></a>
+					<a class="nav_footer_link" onclick="submitWhoData()" ><div class="nav_footer_button next">Choose when to send&nbsp;&gt;</div></a>
 				</div>
 				<div class="nav_footer_btn_buffer"></div>
 
