@@ -15,25 +15,24 @@
 	<div class="body_container">
 
 		<div class="header_bar">
-			<div><a class="header_back_btn" href="#" onclick="logout()">Logout</div></a>
-			<a href="/settings"><div class="settings_button"><img class="settings_icon_img" src="images/settings_icon.png"></div></a>
+			<div><a class="header_back_btn" href="#" onclick="logout()">Logout</a></div>
+			<a href="/settings"><div class="add_contacts_btn"><img class="add_contacts_icon_img" src="images/add_contacts_btn.png"></div><div class="settings_button"><img class="settings_icon_img" src="images/settings_icon.png"></div></a>
 			<center><a onclick="goToHomeAction()"><img class="header_logo" src="images/Logo_thicker.png"></a></center>
 		</div>
 		
 		<div id="body">
 			<h2 class="body_header_text">Contacts</h2>
-
+				<div id="contacts">
 				<center>
 						<table>
 							<hr id="top_hr_line">
-
-
 							<tr id="add_button_row">
 								<td><a class="link"><div class="footer_single_btn" onclick="addContactForm()"><div id="plus_button_text">Add Contact</div></div></a></td>
 							</tr>
 						
 						</table>
 				</center>
+				</div>
 
 			<div class="clear_footer"></div>
 
