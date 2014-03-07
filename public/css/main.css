@@ -920,15 +920,14 @@ body {
 	}
 
 	.add_contacts_icon_img {
-		width: 82%;
+		width: 78%;
 		height: auto;
 		clear: both;
-
 	}
 
 	.add_contacts_btn {
 		margin-left: 83%;
-		margin-top: .6em;
+		margin-top: .67em;
 		position: absolute;
 		float: right;
 
