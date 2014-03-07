@@ -20,16 +20,20 @@ function onFinishPost(result) {
 }
 
 $(document).on('click', '.delete_contact', function() {
-	var contact_id = $(this).closest("td").attr("id");
-	var user_id = $.cookie('user_id');
-
-
+	var continuteToDeleteContact = confirm("Are you sure you want to delete this contact?");
+	if (continuteToDeleteContact == true) {
+	  var contact_id = $(this).closest("td").attr("id");
+		var user_id = $.cookie('user_id');
 		$.post("http://www.aerodroid.com/remindly/delete_contact.php",
 			{
 				"contact_id" : contact_id,
 				"user_id" : user_id	
 			},
 		onFinishDelete);
+	} else {
+
+	}
+
 
 });
 

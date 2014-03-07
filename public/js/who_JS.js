@@ -106,7 +106,7 @@ function doesNameExist(value) {
 
 function isEmpty() {
 	var isEmpty = true;
-	if (!$('#me').is(":checked")) {
+	if (!$('#me_input').is(":checked")) {
 		var index = 1;
 
 		var value = $('#recipient' + index.toString()).val();
@@ -139,18 +139,18 @@ function isEmpty() {
 var numTextFields = 3;
 var recipientNumber = 2;
 
-$('#me').change(function() {
-	if ($('#me').is(':checked'))  {
+$('#me_input').change(function() {
+	if ($('#me_input').is(':checked'))  {
 		numTextFields--;
 	} else {
 		numTextFields++;
 	}
-	if ((!$('#me').is(':checked')) && numTextFields <= 1) {
+	if ((!$('#me_input').is(':checked')) && numTextFields <= 1) {
 		console.log("uncheck and add field");
 		addTextField();
 	}
-	if ($('#me').is(':checked') && numTextFields < 0) {
-		$("#recipient5").remove();
+	if ($('#me_input').is(':checked') && numTextFields < 0) {
+		$("#recipient_input5").remove();
 		var add_button_row = $("#add_button_row");
 		add_button_row.remove();
 		numTextFields++;
@@ -171,9 +171,17 @@ function addTextField() {
 		$(newTextField).insertAfter('#recipient_row' + (recipientNumber - 1));
 		numTextFields--;
 		recipientNumber++;
-	}
+		if (numTextFields == 0) {
+			disableButton();
+		}
+	} 
 	console.log(numTextFields);
+}
 
+function disableButton() {
+	$('#plus_row_button').css("opacity", ".5");
+	// $("<p id='sub_message'>Maximum of 5 Recipients</p>").insertAfter('#contacts_container');
+	// $('#add_button_row').appendTo("<p>Maximum of 5 Recipients</p>");
 }
 
 $(function() {

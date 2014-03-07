@@ -2,6 +2,12 @@
 	visibility: hidden;
 }
 
+
+
+.link {
+	text-decoration: none;
+}
+
 #hidden_form_data {
 	position: absolute;
 }
@@ -70,7 +76,7 @@ body {
 		text-decoration: none;
 		color: white;
 		font-size: .8em;
-		font-weight: 300;
+		font-weight: 400;
 		margin-top: .7em;
 		margin-left: .5em;
 	}
@@ -78,9 +84,23 @@ body {
 
 
 	.settings_icon_img {
-		width: 70%;
+		width: 75%;
 		height: auto;
 		clear: both;
+	}
+	.add_contacts_icon_img {
+		width: 59%;
+		height: auto;
+		clear: both;
+
+	}
+
+	.add_contacts_btn {
+		margin-left: 79%;
+		margin-top: .48em;
+		position: absolute;
+		float: right;
+
 	}
 
 	.settings_button {
@@ -95,7 +115,7 @@ body {
 		margin-top: .2em;
 		width: 4.5em;
 		height: auto;
-
+		/*visibility: hidden;*/
 	}
 
 	/* BODY STYLING */
@@ -554,11 +574,12 @@ body {
 	}
 
 	.contact_row {
-		width: 92%;
 		height: 40px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
-	.recipient_name_textbox {
+/*	.recipient_name_textbox {
 		font-size: .6em;
 		font-family: "helvetica";
 		font-weight: 400;
@@ -577,7 +598,7 @@ body {
 		width: 9%;
 		height: auto;
 		margin-left: 10px;
-	}
+	}*/
 
 
 
@@ -591,9 +612,25 @@ body {
 	  border-radius: 10px; 
 	  outline:0; 
 	  height:1.5em; 
-	  width: 83%; 
+	  width: 93%; 
 	  padding-left:10px; 
 	} 
+
+	#plus_row_button {
+		text-align: center;
+	  border: 1px solid rgba(122, 205, 75, 1);
+	  -webkit-border-radius: 10px; 
+	  -moz-border-radius: 10px; 
+	  border-radius: 10px; 
+	  outline:0; 
+	  height:1.5em; 
+	  width: 260px; 
+	  padding-left:10px; 
+	  padding-right:10px; 
+		background-color: rgba(122, 205, 75, 1);
+		overflow: auto;
+
+	}
 
 	.plus_btn {
 		margin-top: .15em;
@@ -878,8 +915,22 @@ body {
 	}
 
 	.settings_button {
-		margin-left: 90%;
+		margin-left: 91%;
 		margin-top: .7em;
+		position: absolute;
+		float: right;
+	}
+
+	.add_contacts_icon_img {
+		width: 82%;
+		height: auto;
+		clear: both;
+
+	}
+
+	.add_contacts_btn {
+		margin-left: 83%;
+		margin-top: .6em;
 		position: absolute;
 		float: right;
 
@@ -1195,6 +1246,7 @@ body {
 	  padding-right:10px; 
 		background-color: rgba(122, 205, 75, 1);
 		overflow: auto;
+		font-weight: 100;
 
 	}
 
@@ -1221,6 +1273,11 @@ body {
 	/* END SETTING PAGE STYLING */
 
 	/* CONTACTS PAGE STYLING */
+	#contacts {
+		overflow:scroll; 
+		height:400px;
+		overflow-y: scroll;
+	}
 
 	.contact_textbox {
 		margin-left: 1em;
@@ -1347,7 +1404,12 @@ body {
 		width: 100%;
 	}
 
+	#contacts_table {
+		/*background-color: green;*/
+	}
+
 	.contact_row {
+		/*background-color: green;*/
 		width: 45%;
 		height: 50px;
 	}
@@ -1386,8 +1448,8 @@ body {
 
 	#plus_button_text {
 		color: white;
-		margin-top: -.17em;
-		font-size: 1.5em;
+		font-size: 1.1em;
+		margin-top: .15em;
 	}
 
 	input.textbox::-webkit-input-placeholder {font-style: italic;}
@@ -1517,6 +1579,14 @@ body {
 		top:1px;
 	}
 
+	#sub_message {
+		text-align: center;
+		font-size: 1em;
+		width: 45%;
+		margin-right: auto;
+		margin-left: auto;
+		opacity: .8;
+	}
 	/* END WHO PAGE STYLING*/
 
 	/* MESSAGE PAGE STYLING */
