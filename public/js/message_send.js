@@ -41,7 +41,16 @@ function displayHeaderInfo() {
 		recipients += ", " + recipient4;
 	}
 
-	$("<h2 class='body_normal_text'>This Remindly will be sent to " + recipients + " on " + datetime[0] + " at " + datetime[1] + ".</h2>").insertAfter("#message_container");
+	var recipients_string;
+	var recipients_json = JSON.parse($.cookie("recipients"));
+	console.log(recipients_json);
+	if(recipient1 == "self")
+		recipients_string = "myself";
+	for(var recipient in recipients_json) {
+		recipients_string += ", " + recipients_json[recipient]["recipient_name"];
+	}
+
+	$("<h2 class='body_normal_text'>This Remindly will be sent to " + recipients_string + " on " + datetime[0] + " at " + datetime[1] + ".</h2>").insertAfter("#message_container");
 }
 
 function sendMessageData() {

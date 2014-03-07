@@ -31,8 +31,24 @@ function submitWhoData() {
 	  console.log("Finished timing: " + timeSpent);
 	  console.log("hello");
 	  fillHiddenFormFields();
+	  addContactNamesToCookie();
 		$('#add_contacts_form').submit();
 	}
+}
+
+function addContactNamesToCookie() {
+	var json = [];
+	for (var row = 1; row <= 5; row++) {
+		if ($("#recipient_row" + row).length > 0) {
+			if ($("#recipient_input" + row).val() != "") {
+				var contactName = $('#recipient_input' + row).val();
+				var contactNumber = $('#recipient' + row).val();
+				json.push({"recipient_name" : contactName, "recipient_number" : contactNumber});
+			}
+		}
+	}
+	$.cookie("recipients", JSON.stringify(json));
+	console.log(JSON.parse($.cookie("recipients")));
 }
 
 function fillHiddenFormFields() {
@@ -45,8 +61,11 @@ function fillHiddenFormFields() {
 	for (var row = 1; row <= 5; row++) {
 		if ($("#recipient_row" + row).length > 0) {
 			if ($("#recipient_input" + row).val() != "") {
-				var number = getNumber($("#recipient_input" + row).val());
-				console.log(number);
+				var number = $("#recipient_input" + row).val();
+				if (!isNumber($("#recipient_input" + row).val())) {
+					number = getNumber($("#recipient_input" + row).val());
+				}
+				// console.log(number);
 				$('#add_contacts_form').append("<input type='hidden' id='recipient" + row + "' name='recipient" + row + "' value='" + number + "'>");
 			}
 		}
@@ -109,14 +128,14 @@ function isEmpty() {
 	if (!$('#me_input').is(":checked")) {
 		var index = 1;
 
-		var value = $('#recipient' + index.toString()).val();
+		var value = $('#recipient_input' + index.toString()).val();
 		while(value != null) {
 			if (value != "") {
 				isEmpty == false;
 				return false;
 			}
 			index++;
-			value = $('#recipient' + index.toString()).val();
+			value = $('#recipient_input' + index.toString()).val();
 		}
 	} else {
 		isEmpty = false;
