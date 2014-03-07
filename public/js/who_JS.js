@@ -26,8 +26,7 @@ function submitWhoData() {
 	} else {
 		var endTime = new Date().getTime();
 		var timeSpent = endTime - startTime;
-	  // ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
-	  // _gaq.push(['_trackTiming', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly']);
+	  ga('send', 'timing', 'timeSpent', 'newWhoPage', timeSpent, 'Remindly', {'page': '/who'});
 	  console.log("Finished timing: " + timeSpent);
 	  console.log("hello");
 	  fillHiddenFormFields();
@@ -65,7 +64,6 @@ function fillHiddenFormFields() {
 				if (!isNumber($("#recipient_input" + row).val())) {
 					number = getNumber($("#recipient_input" + row).val());
 				}
-				// console.log(number);
 				$('#add_contacts_form').append("<input type='hidden' id='recipient" + row + "' name='recipient" + row + "' value='" + number + "'>");
 			}
 		}

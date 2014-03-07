@@ -19,7 +19,7 @@ function onFinishPost(contact) {
 
 	var contact_id = contact['contact_id'];
 		$("<tr class='contact_name_row'><td class='add_contact_row'><label class='contact_label' for='contact_name'>Name:</label>" + 
-		"<input class='contact_textbox' id='contact_name' type='tel' value='" + name + "'></td>" + 
+		"<input class='contact_textbox' id='contact_name' type='text' value='" + name + "'></td>" + 
 		"</tr><tr id='contact_phone_row1'><td class='add_contact_row'><label class='contact_label' for='contact_phone'>Number:</label>" + 
 		"<input class='contact_textbox' id='contact_phone' type='tel' value='" + phone + "'>").insertBefore('#delete_contact_row');
 
