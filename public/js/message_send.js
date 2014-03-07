@@ -53,7 +53,7 @@ function sendMessageData() {
 	var time = $('#time').val();
 	var preMessage = $('#message_textbox').val();
 
-	var message = $.cookie("name") + ": " + preMessage;
+	var message = $.cookie("name") + ": " + preMessage + "-via Remindly.me";
 
 	var recipients = "";
 
@@ -81,9 +81,11 @@ function sendMessageData() {
 	send_remindly(user_phone_number, recipients, time, message);
 }
 
-function send_remindly(user_phone, recipients, time, message) { 
+function send_remindly(user_phone, recipients, time, message) {
+	var user_id = $.cookie("user_id"); 
 	$.post("http://www.aerodroid.com/remindly/send_remindly.php",
 		{
+			"user_id" : user_id,
 			"user_phone" : user_phone, 
 			"recipients" : recipients, 
 			"time" : time,
