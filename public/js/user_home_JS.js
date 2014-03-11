@@ -50,7 +50,7 @@ function onReceiveRemindlys(result) {
 
 		// style 4:
 
-		$("<div id='msginfo'>To: " + message['recipients']
+		$("<div id='msginfo'>To: " + message['recipients_names']
 			+ "</div>"+ "<table id='pending_remindly_table'><tr><td>" + extractedmsg + "</tr><tr><td><i class='body_small_text'>"
 			+ datetime[0] + " at " + datetime[1] + "</i></td></tr></table><hr>").insertAfter('#numpending');
 	}

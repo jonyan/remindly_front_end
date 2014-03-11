@@ -1,5 +1,7 @@
 $("#headerinfo").click();
 
+var recipients_names;
+
 $(function() {
 	if(!isLoggedIn()) {
 		console.log("Not logged in, redirecting to home page");
@@ -41,16 +43,21 @@ function displayHeaderInfo() {
 		recipients += ", " + recipient4;
 	}
 
-	var recipients_string="";
+	var recipients_string = "";
+	recipients_names = "";
 	var recipients_json = JSON.parse($.cookie("recipients"));
 	console.log(recipients_json);
-	if(recipient1 == "self")
+	if(recipient1 == "self") {
 		recipients_string = "myself";
-	for(var recipient in recipients_json) {
-			if(recipients_string == "")
+		recipients_names = "Myself";
+	} for(var recipient in recipients_json) {
+			if(recipients_string == "") {
 				recipients_string += recipients_json[recipient]["recipient_name"];
-			else
+				recipients_names += recipients_json[recipient]["recipient_name"];
+			} else {
 				recipients_string += ", " + recipients_json[recipient]["recipient_name"];
+				recipients_names += ", " + recipients_json[recipient]["recipient_name"];;
+			}
 	}
 
 	$("<h2 class='body_normal_text'>This Remindly will be sent to " + recipients_string + " on " + datetime[0] + " at " + datetime[1] + ".</h2>").insertAfter("#message_container");
@@ -65,7 +72,7 @@ function sendMessageData() {
 	var time = $('#time').val();
 	var preMessage = $('#message_textbox').val();
 
-	var message = $.cookie("name") + ": " + preMessage + "-via Remindly.me";
+	var message = $.cookie("name") + ": " + preMessage + " - via Remindly.me";
 
 	var recipients = "";
 
@@ -94,15 +101,17 @@ function sendMessageData() {
 }
 
 function send_remindly(user_phone, recipients, time, message) {
-	var user_id = $.cookie("user_id"); 
-	$.post("http://www.aerodroid.com/remindly/send_remindly.php",
-		{
+	var user_id = $.cookie("user_id");
+	var data = {
 			"user_id" : user_id,
 			"user_phone" : user_phone, 
-			"recipients" : recipients, 
+			"recipients" : recipients,
+			"recipients_names" : recipients_names,
 			"time" : time,
 			"message" : message
-		}, onFinish);
+		};
+	$.post("http://www.aerodroid.com/remindly/send_remindly.php", data, onFinish);
+	console.log(data);
 }
 
 function onFinish(result) {
