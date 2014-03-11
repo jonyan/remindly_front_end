@@ -21,7 +21,7 @@ function get_users_remindlys(user_phone) {
 
 
 function onReceiveRemindlys(result) { 
-	console.log(result.length);
+	console.log(result);
 	var userName = $.cookie("name");
 
 	$("#body").prepend($("<h2 class='body_header_text'>Hi, " + userName + "!</h2>"));
@@ -37,24 +37,37 @@ function onReceiveRemindlys(result) {
 		 console.log("extracted message: " + extractedmsg);
 		 var msgnum = parseInt(i) +1;
 		 console.log("message number: " + msgnum);
-		// var table = "<table id='pending_remindly_table'><tr><td>Message #: " + i + "<td></tr><tr><td> Recipients: " + message['recipients'] + "</td></tr><tr><td>Date to Send: " + message['time'] + "</td></tr><tr><td>Message: " + message['message'] + "</td></tr></table>";
-		// style 1: who what when
-		// $("<table id='pending_remindly_table'><tr><th>Who: </th><td>" + message['recipients'] + "</td></tr><tr><th>What: </th><td>" + extractedmsg+ "</tr><tr><th>When: </th><td>on " + datetime[0] + " at " + datetime[1] + "</td></tr></table><br>").insertAfter('#numpending')
-		
-		// style 2: 
-		// $("<table id='pending_remindly_table'><tr><th>To: </th><td>" + message['recipients'] + "</td></tr><tr><th>What: </th><td>" + extractedmsg+ "</tr><tr><th></th><td><i>To be sent on " + datetime[0] + " at " + datetime[1] + "</i></td></tr></table><br>").insertAfter('#numpending')
-
-		// style 3: only message is green -- this is pretty damn ugly lol
-		// $("<b>Message " + msgnum + ": </b> <center><p id='msginfo'> Send on " + datetime[0] + " at " + datetime[1] + " to " + message['recipients'] + "</p></center>" +
-		 // "<table id='pending_remindly_table'><tr><td>" + extractedmsg+ "</td></tr></table><br>").insertAfter('#numpending')
-
-		// style 4:
+		 var message_id = message['message_id'];
 
 		$("<div id='msginfo'>To: " + message['recipients']
-			+ "</div>"+ "<table id='pending_remindly_table'><tr><td>" + extractedmsg + "</tr><tr><td><i class='body_small_text'>"
+			+ "<input type='hidden' class='message_id' value='" + message_id + "'><a class='delete_remindly'><img class='delete_btn' src='images/delete_btn.png'></a></div>"+ "<table id='pending_remindly_table'><tr><td>" + extractedmsg + "</tr><tr><td><i class='body_small_text'>"
 			+ datetime[0] + " at " + datetime[1] + "</i></td></tr></table><hr>").insertAfter('#numpending');
 	}
 }
+
+$(document).on('click', '.delete_remindly', function() {
+	var continuteToDeleteRemindly = confirm("Are you sure you want to delete this Remindly?");
+	if (continuteToDeleteRemindly == true) {
+		var user_id = $.cookie('user_id');
+		var message_id = $(this).siblings().val();
+		console.log("Message ID: " + message_id);
+		$.post("http://www.aerodroid.com/remindly/cancel_remindly.php",
+			{
+				"user_id" : user_id,
+				"message_id" : message_id	
+			},
+		onFinishDelete);
+	} else {
+		// do nothing
+	}
+
+	function onFinishDelete(result) {
+		location.reload();
+	}
+
+
+
+});
 
 function renderWhoPage() {
 	window.location.href = '/who';
